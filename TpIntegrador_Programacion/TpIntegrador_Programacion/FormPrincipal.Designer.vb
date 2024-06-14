@@ -1,0 +1,240 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class Form1
+    Inherits System.Windows.Forms.Form
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AltaUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AltaAnimalesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoVerdurasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblInfo2 = New System.Windows.Forms.Label()
+        Me.lblInfo = New System.Windows.Forms.Label()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TimerCarga = New System.Windows.Forms.Timer(Me.components)
+        Me.MenuStrip1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.SuspendLayout()
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.InformesToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(946, 28)
+        Me.MenuStrip1.TabIndex = 1
+        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.MenuStrip1.Visible = False
+        '
+        'UsuariosToolStripMenuItem
+        '
+        Me.UsuariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaUsuarioToolStripMenuItem, Me.AltaAnimalesToolStripMenuItem})
+        Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(79, 24)
+        Me.UsuariosToolStripMenuItem.Text = "Usuarios"
+        '
+        'AltaUsuarioToolStripMenuItem
+        '
+        Me.AltaUsuarioToolStripMenuItem.Name = "AltaUsuarioToolStripMenuItem"
+        Me.AltaUsuarioToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.AltaUsuarioToolStripMenuItem.Text = "Alta Usuario"
+        '
+        'AltaAnimalesToolStripMenuItem
+        '
+        Me.AltaAnimalesToolStripMenuItem.Name = "AltaAnimalesToolStripMenuItem"
+        Me.AltaAnimalesToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.AltaAnimalesToolStripMenuItem.Text = "Alta Animales"
+        '
+        'InformesToolStripMenuItem
+        '
+        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoUsuariosToolStripMenuItem, Me.ListadoVerdurasToolStripMenuItem})
+        Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(81, 24)
+        Me.InformesToolStripMenuItem.Text = "Informes"
+        '
+        'ListadoUsuariosToolStripMenuItem
+        '
+        Me.ListadoUsuariosToolStripMenuItem.Name = "ListadoUsuariosToolStripMenuItem"
+        Me.ListadoUsuariosToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ListadoUsuariosToolStripMenuItem.Text = "Listado Usuarios"
+        '
+        'ListadoVerdurasToolStripMenuItem
+        '
+        Me.ListadoVerdurasToolStripMenuItem.Name = "ListadoVerdurasToolStripMenuItem"
+        Me.ListadoVerdurasToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ListadoVerdurasToolStripMenuItem.Text = "Listado Verduras"
+        '
+        'SalirToolStripMenuItem
+        '
+        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(52, 24)
+        Me.SalirToolStripMenuItem.Text = "Salir"
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.lblInfo2)
+        Me.Panel1.Controls.Add(Me.lblInfo)
+        Me.Panel1.Controls.Add(Me.ProgressBar1)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.TextBox2)
+        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(299, 100)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(358, 317)
+        Me.Panel1.TabIndex = 3
+        '
+        'lblInfo2
+        '
+        Me.lblInfo2.AutoSize = True
+        Me.lblInfo2.Location = New System.Drawing.Point(56, 168)
+        Me.lblInfo2.Name = "lblInfo2"
+        Me.lblInfo2.Size = New System.Drawing.Size(48, 16)
+        Me.lblInfo2.TabIndex = 9
+        Me.lblInfo2.Text = "Label4"
+        '
+        'lblInfo
+        '
+        Me.lblInfo.AutoSize = True
+        Me.lblInfo.Location = New System.Drawing.Point(56, 72)
+        Me.lblInfo.Name = "lblInfo"
+        Me.lblInfo.Size = New System.Drawing.Size(48, 16)
+        Me.lblInfo.TabIndex = 8
+        Me.lblInfo.Text = "Label3"
+        '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(26, 207)
+        Me.ProgressBar1.MarqueeAnimationSpeed = 50
+        Me.ProgressBar1.Maximum = 250
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(314, 23)
+        Me.ProgressBar1.TabIndex = 7
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.Button1.Location = New System.Drawing.Point(103, 251)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(154, 41)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "Ingresar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(59, 143)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TextBox2.Size = New System.Drawing.Size(245, 22)
+        Me.TextBox2.TabIndex = 3
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(59, 47)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(245, 22)
+        Me.TextBox1.TabIndex = 2
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Label2.Location = New System.Drawing.Point(40, 102)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(283, 25)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Ingrese Contraseña de Usuario"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Label1.Location = New System.Drawing.Point(54, 19)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(250, 25)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Ingrese Nombre de Usuario"
+        '
+        'TimerCarga
+        '
+        Me.TimerCarga.Interval = 250
+        '
+        'Form1
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(946, 450)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.IsMdiContainer = True
+        Me.MainMenuStrip = Me.MenuStrip1
+        Me.Name = "Form1"
+        Me.Text = "Form1"
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
+
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AltaUsuarioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AltaAnimalesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents InformesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListadoUsuariosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListadoVerdurasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents TimerCarga As Timer
+    Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents lblInfo2 As Label
+    Friend WithEvents lblInfo As Label
+End Class
