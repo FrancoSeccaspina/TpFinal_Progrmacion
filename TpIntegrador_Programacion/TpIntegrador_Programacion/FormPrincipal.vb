@@ -1,4 +1,6 @@
-﻿Public Class Form1
+﻿Imports ServiciosVet.Scripts
+
+Public Class Form1
     Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
         Me.Close()
     End Sub
@@ -43,6 +45,14 @@
         lblInfo2.Text = mensaje_con
         lblInfo2.Visible = True
     End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Dim BaseDeDatos As New ScriptsSQL()
+        BaseDeDatos.Ejecutar()
+    End Sub
+
+
 
 
     'Private Sub ProgressBar1_Click(sender As Object, e As EventArgs) Handles ProgressBar1.Click

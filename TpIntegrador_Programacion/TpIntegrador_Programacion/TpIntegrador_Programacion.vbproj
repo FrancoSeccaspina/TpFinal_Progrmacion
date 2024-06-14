@@ -155,5 +155,12 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ServiciosVet\ServiciosVet.csproj">
+      <Project>{34CBD2D4-60EF-43A4-98C8-55575A2FFF4E}</Project>
+      <Name>ServiciosVet</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

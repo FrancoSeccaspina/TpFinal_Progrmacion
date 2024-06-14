@@ -52,7 +52,8 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.InformesToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(946, 28)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(710, 23)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         Me.MenuStrip1.Visible = False
@@ -61,44 +62,44 @@ Partial Class Form1
         '
         Me.UsuariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaUsuarioToolStripMenuItem, Me.AltaAnimalesToolStripMenuItem})
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(79, 24)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(64, 19)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'AltaUsuarioToolStripMenuItem
         '
         Me.AltaUsuarioToolStripMenuItem.Name = "AltaUsuarioToolStripMenuItem"
-        Me.AltaUsuarioToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.AltaUsuarioToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
         Me.AltaUsuarioToolStripMenuItem.Text = "Alta Usuario"
         '
         'AltaAnimalesToolStripMenuItem
         '
         Me.AltaAnimalesToolStripMenuItem.Name = "AltaAnimalesToolStripMenuItem"
-        Me.AltaAnimalesToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.AltaAnimalesToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
         Me.AltaAnimalesToolStripMenuItem.Text = "Alta Animales"
         '
         'InformesToolStripMenuItem
         '
         Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoUsuariosToolStripMenuItem, Me.ListadoVerdurasToolStripMenuItem})
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
-        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(81, 24)
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(66, 19)
         Me.InformesToolStripMenuItem.Text = "Informes"
         '
         'ListadoUsuariosToolStripMenuItem
         '
         Me.ListadoUsuariosToolStripMenuItem.Name = "ListadoUsuariosToolStripMenuItem"
-        Me.ListadoUsuariosToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ListadoUsuariosToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
         Me.ListadoUsuariosToolStripMenuItem.Text = "Listado Usuarios"
         '
         'ListadoVerdurasToolStripMenuItem
         '
         Me.ListadoVerdurasToolStripMenuItem.Name = "ListadoVerdurasToolStripMenuItem"
-        Me.ListadoVerdurasToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ListadoVerdurasToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
         Me.ListadoVerdurasToolStripMenuItem.Text = "Listado Verduras"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(52, 24)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 19)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'ContextMenuStrip1
@@ -117,70 +118,78 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(299, 100)
+        Me.Panel1.Location = New System.Drawing.Point(224, 81)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(358, 317)
+        Me.Panel1.Size = New System.Drawing.Size(268, 258)
         Me.Panel1.TabIndex = 3
         '
         'lblInfo2
         '
         Me.lblInfo2.AutoSize = True
-        Me.lblInfo2.Location = New System.Drawing.Point(56, 168)
+        Me.lblInfo2.Location = New System.Drawing.Point(42, 136)
+        Me.lblInfo2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblInfo2.Name = "lblInfo2"
-        Me.lblInfo2.Size = New System.Drawing.Size(48, 16)
+        Me.lblInfo2.Size = New System.Drawing.Size(39, 13)
         Me.lblInfo2.TabIndex = 9
         Me.lblInfo2.Text = "Label4"
         '
         'lblInfo
         '
         Me.lblInfo.AutoSize = True
-        Me.lblInfo.Location = New System.Drawing.Point(56, 72)
+        Me.lblInfo.Location = New System.Drawing.Point(42, 58)
+        Me.lblInfo.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblInfo.Name = "lblInfo"
-        Me.lblInfo.Size = New System.Drawing.Size(48, 16)
+        Me.lblInfo.Size = New System.Drawing.Size(39, 13)
         Me.lblInfo.TabIndex = 8
         Me.lblInfo.Text = "Label3"
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(26, 207)
+        Me.ProgressBar1.Location = New System.Drawing.Point(20, 168)
+        Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ProgressBar1.MarqueeAnimationSpeed = 50
         Me.ProgressBar1.Maximum = 250
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(314, 23)
+        Me.ProgressBar1.Size = New System.Drawing.Size(236, 19)
         Me.ProgressBar1.TabIndex = 7
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.Button1.Location = New System.Drawing.Point(103, 251)
+        Me.Button1.Location = New System.Drawing.Point(77, 204)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(154, 41)
+        Me.Button1.Size = New System.Drawing.Size(116, 33)
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "Ingresar"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(59, 143)
+        Me.TextBox2.Location = New System.Drawing.Point(44, 116)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox2.Size = New System.Drawing.Size(245, 22)
+        Me.TextBox2.Size = New System.Drawing.Size(185, 20)
         Me.TextBox2.TabIndex = 3
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(59, 47)
+        Me.TextBox1.Location = New System.Drawing.Point(44, 38)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(245, 22)
+        Me.TextBox1.Size = New System.Drawing.Size(185, 20)
         Me.TextBox1.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.Label2.Location = New System.Drawing.Point(40, 102)
+        Me.Label2.Location = New System.Drawing.Point(30, 83)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(283, 25)
+        Me.Label2.Size = New System.Drawing.Size(231, 20)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Ingrese Contraseña de Usuario"
         '
@@ -188,9 +197,10 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.Label1.Location = New System.Drawing.Point(54, 19)
+        Me.Label1.Location = New System.Drawing.Point(40, 15)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(250, 25)
+        Me.Label1.Size = New System.Drawing.Size(204, 20)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Ingrese Nombre de Usuario"
         '
@@ -200,13 +210,14 @@ Partial Class Form1
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(946, 450)
+        Me.ClientSize = New System.Drawing.Size(710, 366)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.MenuStrip1.ResumeLayout(False)
