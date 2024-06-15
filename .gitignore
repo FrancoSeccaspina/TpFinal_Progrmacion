@@ -1,4 +1,5 @@
 # Visual Studio
+*/.vs/
 .vs/
 *.vscode/
 *.suo
