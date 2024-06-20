@@ -1,4 +1,5 @@
 ﻿Imports ServiciosVet.Scripts
+Imports ServiciosVet.Sql
 
 Public Class Form1
     Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
@@ -47,6 +48,8 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim sql As New Sql()
+        sql.Iniciar()
     End Sub
 
 

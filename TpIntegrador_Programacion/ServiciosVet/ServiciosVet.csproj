@@ -44,9 +44,13 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\ScriptsSQL.cs" />
+    <Compile Include="Sql\ConexionSql.cs" />
+    <Compile Include="Sql\CrearBaseDeDatos.cs" />
+    <Compile Include="Sql\EjecutarScripts.cs" />
+    <Compile Include="Sql\Sql.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Sql\" />
+    <Folder Include="SQLScripts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,7 +11,6 @@ obj/
 *.dll
 
 # Archivos de configuracion y cache
-App.config
 *.cache
 *.log
 *.bak
