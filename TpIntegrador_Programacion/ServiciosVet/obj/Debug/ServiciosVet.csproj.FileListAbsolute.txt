@@ -4,3 +4,9 @@ C:\Users\gusta\Desktop\TrabajoPracticoFinalv00\TpFinal_Progrmacion\TpIntegrador_
 C:\Users\gusta\Desktop\TrabajoPracticoFinalv00\TpFinal_Progrmacion\TpIntegrador_Programacion\ServiciosVet\obj\Debug\ServiciosVet.csproj.CoreCompileInputs.cache
 C:\Users\gusta\Desktop\TrabajoPracticoFinalv00\TpFinal_Progrmacion\TpIntegrador_Programacion\ServiciosVet\obj\Debug\ServiciosVet.dll
 C:\Users\gusta\Desktop\TrabajoPracticoFinalv00\TpFinal_Progrmacion\TpIntegrador_Programacion\ServiciosVet\obj\Debug\ServiciosVet.pdb
+C:\Users\lufra\Source\Repos\FrancoSeccaspina\TpFinal_Progrmacion\TpIntegrador_Programacion\ServiciosVet\bin\Debug\ServiciosVet.dll
+C:\Users\lufra\Source\Repos\FrancoSeccaspina\TpFinal_Progrmacion\TpIntegrador_Programacion\ServiciosVet\bin\Debug\ServiciosVet.pdb
+C:\Users\lufra\Source\Repos\FrancoSeccaspina\TpFinal_Progrmacion\TpIntegrador_Programacion\ServiciosVet\obj\Debug\ServiciosVet.csproj.AssemblyReference.cache
+C:\Users\lufra\Source\Repos\FrancoSeccaspina\TpFinal_Progrmacion\TpIntegrador_Programacion\ServiciosVet\obj\Debug\ServiciosVet.csproj.CoreCompileInputs.cache
+C:\Users\lufra\Source\Repos\FrancoSeccaspina\TpFinal_Progrmacion\TpIntegrador_Programacion\ServiciosVet\obj\Debug\ServiciosVet.dll
+C:\Users\lufra\Source\Repos\FrancoSeccaspina\TpFinal_Progrmacion\TpIntegrador_Programacion\ServiciosVet\obj\Debug\ServiciosVet.pdb

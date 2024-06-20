@@ -53,7 +53,7 @@ Partial Class Form1
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(710, 23)
+        Me.MenuStrip1.Size = New System.Drawing.Size(710, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         Me.MenuStrip1.Visible = False
@@ -99,7 +99,7 @@ Partial Class Form1
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 19)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'ContextMenuStrip1
@@ -119,7 +119,7 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(224, 81)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(268, 258)
         Me.Panel1.TabIndex = 3
@@ -130,9 +130,9 @@ Partial Class Form1
         Me.lblInfo2.Location = New System.Drawing.Point(42, 136)
         Me.lblInfo2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblInfo2.Name = "lblInfo2"
-        Me.lblInfo2.Size = New System.Drawing.Size(39, 13)
+        Me.lblInfo2.Size = New System.Drawing.Size(10, 13)
         Me.lblInfo2.TabIndex = 9
-        Me.lblInfo2.Text = "Label4"
+        Me.lblInfo2.Text = "."
         '
         'lblInfo
         '
@@ -140,14 +140,14 @@ Partial Class Form1
         Me.lblInfo.Location = New System.Drawing.Point(42, 58)
         Me.lblInfo.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblInfo.Name = "lblInfo"
-        Me.lblInfo.Size = New System.Drawing.Size(39, 13)
+        Me.lblInfo.Size = New System.Drawing.Size(10, 13)
         Me.lblInfo.TabIndex = 8
-        Me.lblInfo.Text = "Label3"
+        Me.lblInfo.Text = "."
         '
         'ProgressBar1
         '
         Me.ProgressBar1.Location = New System.Drawing.Point(20, 168)
-        Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(2)
         Me.ProgressBar1.MarqueeAnimationSpeed = 50
         Me.ProgressBar1.Maximum = 250
         Me.ProgressBar1.Name = "ProgressBar1"
@@ -158,7 +158,7 @@ Partial Class Form1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.Button1.Location = New System.Drawing.Point(77, 204)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(116, 33)
         Me.Button1.TabIndex = 4
@@ -168,7 +168,7 @@ Partial Class Form1
         'TextBox2
         '
         Me.TextBox2.Location = New System.Drawing.Point(44, 116)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox2.Size = New System.Drawing.Size(185, 20)
@@ -177,7 +177,7 @@ Partial Class Form1
         'TextBox1
         '
         Me.TextBox1.Location = New System.Drawing.Point(44, 38)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(185, 20)
         Me.TextBox1.TabIndex = 2
@@ -206,6 +206,7 @@ Partial Class Form1
         '
         'TimerCarga
         '
+        Me.TimerCarga.Enabled = True
         Me.TimerCarga.Interval = 250
         '
         'Form1
@@ -217,7 +218,7 @@ Partial Class Form1
         Me.Controls.Add(Me.MenuStrip1)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.MenuStrip1.ResumeLayout(False)

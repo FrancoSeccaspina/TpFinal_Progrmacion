@@ -2,7 +2,7 @@
 
 Public Class Form1
     Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
-        Me.Close()
+        '
     End Sub
 
     Private Sub AltaUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaUsuarioToolStripMenuItem.Click
@@ -34,19 +34,26 @@ Public Class Form1
         Dim mensaje_con = $"Contraseña incorrecta, ingrese '{contraseña}'"
         Dim mensaje_usu = $"Usuario inexistente, ingrese '{usuario}'"
         If TextBox1.Text = "pepe" And TextBox2.Text = "123" Then
-            'Dim pantalla As New PantalaDeCarga
-            'pantalla.Show()
+            Dim pantalla As New PantallaDeCarga
+            pantalla.Show()
             TimerCarga.Enabled = True
             mensaje_con = "Cargando....."
             mensaje_usu = "Cargando....."
+            Panel1.Visible = False
+            MenuStrip1.Visible = True
         End If
         lblInfo.Text = mensaje_usu
         lblInfo.Visible = True
         lblInfo2.Text = mensaje_con
         lblInfo2.Visible = True
+
+    End Sub
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        Me.Close()
     End Sub
 
 
@@ -62,11 +69,6 @@ Public Class Form1
     'End Sub
 
     'Private Sub TimerCarga_Tick(sender As Object, e As EventArgs) Handles TimerCarga.Tick
-    '    If ProgressBar1.Value = ProgressBar1.Maximum Then
-    '        Me.Close()
-    '    Else
-    '        Dim nuevoValor = ProgressBar1.Value + 10
-    '        ProgressBar1.Value = Math.Min(nuevoValor, ProgressBar1.Maximum)
-    '    End If
+
     'End Sub
 End Class
