@@ -1,68 +1,34 @@
-# Visual Studio
-*/.vs/
+# Visual Studio / ReSharper
 .vs/
-*.vscode/
 *.suo
 *.user
-*.userosscache
-*.sln.docstates
-*/obj/Debug/*.cache
+.idea/
 
-# Ignore build output folders
+# Binarios y archivos de compilacion
 bin/
 obj/
+*.pdb
+*.dll
+
+# Archivos de configuracion y cache
+App.config
 *.cache
+*.log
+*.bak
 
-# Build results
-[Dd]ebug/
-[Rr]elease/
-x64/
-x86/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
+# Dependencias de NuGet
+packages/
 
-# Roslyn
-*.ide.*
+# Ignorar la carpeta .vs completa
+TpIntegrador_Programacion/.vs/
+TpIntegrador_Programacion/TpIntegrador_Programacion/.vs/
+TpIntegrador_Programacion/ServiciosVet/.vs/
 
-# User-specific files
-*.rsuser
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
+# Ignorar los archivos binarios y de depuracion en la carpeta bin y obj
+TpIntegrador_Programacion/ServiciosVet/obj/
+TpIntegrador_Programacion/ServiciosVet/bin/
+TpIntegrador_Programacion/TpIntegrador_Programacion/obj/
+TpIntegrador_Programacion/TpIntegrador_Programacion/bin/
 
-# Mono Auto Generated Files
-mono_crash.*
-
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
-
-# Folder config file
-Desktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# VS Code directories
-.vscode/
-
-# ASP.NET Scaffolding
-ScaffoldingReadMe.txt
-
-# SQL Server files
-*.mdf
-*.ldf
-
-# NUNIT
-*.VisualState.xml
-TestResult.xml
-
-# Build Results of an ARM Project
-[Dd]ebugPublic/
-[Rr]eleasePublic/
-[Rr]eset/
-
+# Ignorar archivos .dtbcache.json
+*.dtbcache.json
