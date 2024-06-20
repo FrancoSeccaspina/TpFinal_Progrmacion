@@ -15,11 +15,15 @@ namespace ServiciosVet.Sql
 
         public ConexionSql() { }
 
+        /// <summary>
+        ///    Iniciar la conexion con la instancia sql 
+        /// </summary>
+        /// <returns>IDbConnection: Instancia sql </returns>
         public IDbConnection Iniciar()
         {
             try
             {
-                string instancia = this.TipoInstancia();
+                string instancia = this.ServerName();
                 StringDeConexion = $"Server={instancia};Integrated Security=True;";
 
                 SqlConnection connection = new SqlConnection(this.StringDeConexion);
@@ -34,16 +38,20 @@ namespace ServiciosVet.Sql
             }
         }
 
-        private string TipoInstancia()
+        /// <summary>
+        ///     Verifica el tipo de instancia que tiene la maquina donde se ejecutra el programa
+        /// </summary>
+        /// <returns>String: server name</returns>
+        private string ServerName()
         {
             string instanciaSQLExpress = @"SOFTWARE\Microsoft\Microsoft SQL Server\SQLEXPRESS";
-            string instanciaSQLServer = @"SOFTWARE\Microsoft\Microsoft SQL Server";
+            string instanciaSQLLocal = @"SOFTWARE\Microsoft\Microsoft SQL Server";
 
             if (Registry.LocalMachine.OpenSubKey(instanciaSQLExpress) != null)
             {
                 return ".\\SQLEXPRESS";
             }
-            else if (Registry.LocalMachine.OpenSubKey(instanciaSQLServer) != null)
+            else if (Registry.LocalMachine.OpenSubKey(instanciaSQLLocal) != null)
             {
                 return ".\\";
             }

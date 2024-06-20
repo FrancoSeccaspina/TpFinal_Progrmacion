@@ -21,6 +21,10 @@ namespace ServiciosVet.Sql
             this.CrearBase(nombreBaseDeDatos);
         }
 
+        /// <summary>
+        ///     Ejecuta comando SQL para crear una base de datos comprobando si existe
+        /// </summary>
+        /// <param name="nombreBaseDeDatos"></param>
         private void CrearBase(string nombreBaseDeDatos)
         {
 
