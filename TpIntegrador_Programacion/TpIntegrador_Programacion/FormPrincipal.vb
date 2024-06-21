@@ -47,6 +47,8 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim sql As New InicializarSql()
+        sql.Iniciar()
     End Sub
 
 

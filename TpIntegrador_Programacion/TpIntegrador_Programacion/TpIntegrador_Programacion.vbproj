@@ -49,6 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -73,6 +74,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfiguracionesSql\CrearBaseDeDatos.vb" />
+    <Compile Include="ConfiguracionesSql\EjecutarScripts.vb" />
+    <Compile Include="ConfiguracionesSql\InicializarSql.vb" />
+    <Compile Include="ConfiguracionesSql\InstanciaSql.vb" />
     <Compile Include="FormPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -155,7 +160,9 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ConfiguracionesSql\SQLscripts\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ServiciosVet\ServiciosVet.csproj">
       <Project>{34CBD2D4-60EF-43A4-98C8-55575A2FFF4E}</Project>

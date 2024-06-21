@@ -1,40 +1,22 @@
-# Visual Studio
+# Visual Studio and Visual Studio Code directories
+**/.vs/
 */.vs/
 .vs/
 *.vscode/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-*/obj/Debug/*.cache
-
-# Ignore build output folders
-bin/
-obj/
-*.cache
-
-# Build results
-[Dd]ebug/
-[Rr]elease/
-x64/
-x86/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
-
-# Roslyn
-*.ide.*
 
 # User-specific files
-*.rsuser
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 
-# Mono Auto Generated Files
+# Build output folders
+bin/
+obj/
+*/bin/
+*/obj/
+
+# Mono auto-generated files
 mono_crash.*
 
 # Windows image file caches
@@ -47,9 +29,6 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-# VS Code directories
-.vscode/
-
 # ASP.NET Scaffolding
 ScaffoldingReadMe.txt
 
@@ -57,12 +36,13 @@ ScaffoldingReadMe.txt
 *.mdf
 *.ldf
 
-# NUNIT
+# NUnit
 *.VisualState.xml
 TestResult.xml
 
-# Build Results of an ARM Project
-[Dd]ebugPublic/
-[Rr]eleasePublic/
-[Rr]eset/
+# Ignore cache files
+*.cache
 
+
+*.dtbcache.json
+*.FileListAbsolute.txt
