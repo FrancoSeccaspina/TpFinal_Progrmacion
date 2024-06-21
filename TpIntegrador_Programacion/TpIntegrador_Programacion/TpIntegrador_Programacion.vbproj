@@ -74,10 +74,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EjecutadorDeScripts\InstanciaSql.vb" />
-    <Compile Include="EjecutadorDeScripts\CrearBaseDeDatos.vb" />
-    <Compile Include="EjecutadorDeScripts\EjecutarScripts.vb" />
-    <Compile Include="EjecutadorDeScripts\InicializarSql.vb" />
+    <Compile Include="ConfiguracionesSql\InstanciaSql.vb" />
+    <Compile Include="ConfiguracionesSql\CrearBaseDeDatos.vb" />
+    <Compile Include="ConfiguracionesSql\EjecutarScripts.vb" />
+    <Compile Include="ConfiguracionesSql\InicializarSql.vb" />
     <Compile Include="FormPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -160,12 +160,8 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\ServiciosVet\ServiciosVet.csproj">
-      <Project>{34CBD2D4-60EF-43A4-98C8-55575A2FFF4E}</Project>
-      <Name>ServiciosVet</Name>
-    </ProjectReference>
+    <Folder Include="ConfiguracionesSql\SQLscripts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

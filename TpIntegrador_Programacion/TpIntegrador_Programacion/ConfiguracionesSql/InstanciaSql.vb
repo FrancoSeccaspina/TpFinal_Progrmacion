@@ -15,7 +15,7 @@ Public Class InstanciaSql
     ''' <summary>
     ''' Inicia la conexión con la instancia de SQL Server.
     ''' </summary>
-    ''' <returns>IDbConnection: Instancia de conexión a SQL Server cerrada.</returns>
+    ''' <returns>IDbConnection: Instancia de conexión a SQL Server ya abierta.</returns>
     Public Function ObtenerConexion() As IDbConnection
         Try
             Dim instancia As String = Me.ServerName()

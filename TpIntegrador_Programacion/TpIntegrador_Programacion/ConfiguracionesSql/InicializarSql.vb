@@ -23,8 +23,6 @@ Public Class InicializarSql
     Public Function ConexionAInstanciaSQL() As IDbConnection
         Try
             Dim StringDeConexion As String = ConfigurationManager.ConnectionStrings("MiConexionSQLExpress").ConnectionString
-
-
             Dim connection As New SqlConnection(StringDeConexion)
             connection.Open()
             Console.WriteLine("Conexión exitosa.")
