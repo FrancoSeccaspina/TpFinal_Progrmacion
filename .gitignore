@@ -31,3 +31,12 @@ TpIntegrador_Programacion/TpIntegrador_Programacion/bin/
 
 # Ignorar archivos .dtbcache.json
 *.dtbcache.json
+
+
+# Archivos generados automáticamente
+*.exe.config
+*.xml
+
+# Archivos de proyecto y solución
+*.csproj
+*.vbproj

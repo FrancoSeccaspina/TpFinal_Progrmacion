@@ -49,6 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -73,6 +74,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EjecutadorDeScripts\InstanciaSql.vb" />
+    <Compile Include="EjecutadorDeScripts\CrearBaseDeDatos.vb" />
+    <Compile Include="EjecutadorDeScripts\EjecutarScripts.vb" />
+    <Compile Include="EjecutadorDeScripts\InicializarSql.vb" />
     <Compile Include="FormPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
