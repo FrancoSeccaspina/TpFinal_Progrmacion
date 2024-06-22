@@ -16,33 +16,5 @@ obj/
 */bin/
 */obj/
 
-# Mono auto-generated files
-mono_crash.*
-
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
-
-# Folder config file
-Desktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# ASP.NET Scaffolding
-ScaffoldingReadMe.txt
-
-# SQL Server files
-*.mdf
-*.ldf
-
-# NUnit
-*.VisualState.xml
-TestResult.xml
-
-# Ignore cache files
-*.cache
-
-
 *.dtbcache.json
 *.FileListAbsolute.txt

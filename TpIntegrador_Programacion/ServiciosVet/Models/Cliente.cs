@@ -8,9 +8,9 @@ namespace ServiciosVet.Models
 {
     public class Cliente
     {
-        public int id {  get; set; }
-        public string DNI {  get; set; }
-        public string Nombre {  get; set; }
+        public int id { get; set; }
+        public string DNI { get; set; }
+        public string Nombre { get; set; }
 
         public Cliente(string dNI, string nombre)
         {

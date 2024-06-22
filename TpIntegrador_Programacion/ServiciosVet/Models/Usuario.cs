@@ -10,7 +10,7 @@ namespace ServiciosVet.Models
     {
         public int Id { get; set; }
         public string NickName { get; set; }
-        public int Contra {  get; set; }
+        public int Contra { get; set; }
 
         public Usuario(string nickName, int contra)
         {
