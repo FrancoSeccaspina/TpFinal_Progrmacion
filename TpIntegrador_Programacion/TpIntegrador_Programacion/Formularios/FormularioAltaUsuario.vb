@@ -1,8 +1,35 @@
 ﻿Public Class FormularioAltaUsuario
-    'Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs) Handles TextBox5.TextChanged
+    Private Sub btnAgregarUsuario_Click(sender As Object, e As EventArgs) Handles btnAgregarUsuario.Click
+        Dim usuario = txtUsuario.Text
+        Dim contrasenia = txtContrasenia.Text
+        Dim confirmarContrasenia = txtConfirContrasenia.Text
+        If contrasenia <> confirmarContrasenia Then
+            MessageBox.Show("ERROR. Las contraseñas no coinciden.")
+            Return
+        End If
+        If usuario = "" Or contrasenia = "" Or confirmarContrasenia = "" Then
+            MessageBox.Show("ERROR. Complete todos los campos.")
+            Limpiar()
+            Return
 
-    'End Sub
-    'Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        End If
 
-    'End Sub
+        Try
+
+        Catch ex As Exception
+
+        End Try
+        MessageBox.Show("¡Animal Agregado con exito!")
+        Limpiar()
+    End Sub
+
+    Private Sub Limpiar()
+        txtUsuario.Text = ""
+        txtContrasenia.Text = ""
+        txtConfirContrasenia.Text = ""
+    End Sub
+
+    Private Sub FormularioAltaUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

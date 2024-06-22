@@ -103,12 +103,6 @@
     <Compile Include="Formularios\FormularioListadoUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\PantallaDeCarga.Designer.vb">
-      <DependentUpon>PantallaDeCarga.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\PantallaDeCarga.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -137,9 +131,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioListadoUsuarios.resx">
       <DependentUpon>FormularioListadoUsuarios.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\PantallaDeCarga.resx">
-      <DependentUpon>PantallaDeCarga.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

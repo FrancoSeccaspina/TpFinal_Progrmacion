@@ -31,13 +31,9 @@ Public Class Form1
         Dim mensaje_con = $"Contraseña incorrecta, ingrese '{contraseña}'"
         Dim mensaje_usu = $"Usuario inexistente, ingrese '{usuario}'"
         If TextBox1.Text = "pepe" And TextBox2.Text = "123" Then
-            Dim pantalla As New PantallaDeCarga
-            pantalla.Show()
             TimerCarga.Enabled = True
             mensaje_con = "Cargando....."
             mensaje_usu = "Cargando....."
-            Panel1.Visible = False
-            MenuStrip1.Visible = True
         End If
         lblInfo.Text = mensaje_usu
         lblInfo.Visible = True
@@ -46,11 +42,26 @@ Public Class Form1
 
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim sql As New InicializarSql()
+        sql.Iniciar()
     End Sub
 
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Me.Close()
+    End Sub
+
+    Private Sub TimerCarga_Tick(sender As Object, e As EventArgs) Handles TimerCarga.Tick
+
+        If ProgressBar1.Value = ProgressBar1.Maximum Then
+            Panel1.Hide()
+            MenuStrip1.Visible = True
+        Else
+
+            Dim nuevoValor = ProgressBar1.Value + 10
+
+            ProgressBar1.Value = Math.Min(nuevoValor, ProgressBar1.Maximum)
+        End If
     End Sub
 
 
