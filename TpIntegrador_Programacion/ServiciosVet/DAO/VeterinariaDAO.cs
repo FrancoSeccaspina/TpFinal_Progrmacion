@@ -9,16 +9,27 @@ namespace ServiciosVet.DAO
     public class VeterinariaDAO
     {
 
-        public VeterinariaDAO()
-        {
+        private static VeterinariaDAO instancia;
+        private string StringConexion;
 
+        private VeterinariaDAO()
+        {
+            StringConexion = ConfigurationManager.ConnectionStrings["MiConexionBaseDeDatosVeterinaria"].ConnectionString;
+        }
+
+        public static VeterinariaDAO ObtenerInstancia()
+        {
+            if (instancia == null)
+            {
+                instancia = new VeterinariaDAO();
+            }
+            return instancia;
         }
 
         public SqlConnection ObtenerConexion()
         {
             try
             {
-                string StringConexion = ConfigurationManager.ConnectionStrings["MiConexionBaseDeDatosVeterinaria"].ConnectionString;
                 SqlConnection connection = new SqlConnection(StringConexion);
                 connection.Open();
                 Console.WriteLine("Conexión exitosa.");
@@ -31,58 +42,6 @@ namespace ServiciosVet.DAO
             }
         }
 
-        public DataTable ObtenerUsuarios()
-        {
-            string query = "SELECT * FROM Usuario";
-            return ConsultarTabla(query);
-        }
-
-        public DataTable ObtenerClientes()
-        {
-            string query = " SELECT * FROM Clientes";
-            return ConsultarTabla(query);
-        }
-        public DataTable ObtenerAnimales()
-        {
-            string query = " SELECT * FROM Animales";
-            return ConsultarTabla(query);
-        }
-
-        public DataTable ObtenerEspecies()
-        {
-            string query = " SELECT * FROM Especies";
-            return ConsultarTabla(query);
-        }
-
-        public bool AgregarUsuario(Usuario nuevoUsuario)
-        {
-            string query = $"INSERT INTO Usuarios (NickName, Contra) VALUES ('{nuevoUsuario.NickName}', '{nuevoUsuario.Contra}')";
-            return this.EjecutarComando(query);
-        }
-        public bool AgregarCliente(Cliente nuevoCliente)
-        {
-            string query = $"INSERT INTO Usuarios (DNI, Nombre) VALUES ('{nuevoCliente.DNI}', '{nuevoCliente.Nombre})'";
-            return this.EjecutarComando(query);
-        }
-
-        public bool AgregarAnimal(Animal nuevoAnimal)
-        {
-            string query = $"INSERT INTO Usuarios (Nombre, Peso, Edad, IDCliente, IDEspecie) " +
-                $"VALUES ('{nuevoAnimal.Nombre}', {nuevoAnimal.Peso}, {nuevoAnimal.Edad}, {nuevoAnimal.IDCliente}, {nuevoAnimal.IDEspecie})";
-            return this.EjecutarComando(query);
-        }
-
-        public bool AgregarEspecie(Especie nuevaEspecie)
-        {
-            string query = $"INSERT INTO Especie (Nombre, EdadMadurez, PesoPromedio) " +
-                $"VALUES ('{nuevaEspecie.Nombre}', {nuevaEspecie.EdadMadurez}, {nuevaEspecie.PesoPromedio})";
-            return this.EjecutarComando(query);
-        }
-        public void AgregarEspecie(Especie nuevoEspecie)
-        {
-            string query = $"INSERT INTO Especies (Nombre) VALUES ({nuevoEspecie.Nombre}";
-            this.EjecutarComando(query);
-        }
 
         public DataTable ConsultarTabla(string query)
         {
