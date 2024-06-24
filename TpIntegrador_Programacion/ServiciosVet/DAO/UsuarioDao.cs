@@ -4,11 +4,11 @@ using System.Data;
 
 namespace ServiciosVet.DAO
 {
-    internal class UsuarioDao
+    internal class UsuarioDAO
     {
         private VeterinariaDAO veterinariaDAO;
 
-        public UsuarioDao()
+        public UsuarioDAO()
         {
             veterinariaDAO = VeterinariaDAO.ObtenerInstancia();
         }

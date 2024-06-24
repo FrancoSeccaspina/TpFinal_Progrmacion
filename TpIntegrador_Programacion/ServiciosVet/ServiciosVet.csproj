@@ -45,7 +45,7 @@
     <Compile Include="DAO\AnimalDAO.cs" />
     <Compile Include="DAO\ClienteDAO.cs" />
     <Compile Include="DAO\EspecieDAO.cs" />
-    <Compile Include="DAO\UsuarioDao.cs" />
+    <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="DAO\VeterinariaDAO.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Cliente.cs" />
