@@ -8,6 +8,7 @@ namespace ServiciosVet.DAO
 {
     public class VeterinariaDAO
     {
+
         public VeterinariaDAO()
         {
 
@@ -41,16 +42,41 @@ namespace ServiciosVet.DAO
             string query = " SELECT * FROM Clientes";
             return ConsultarTabla(query);
         }
-        public void AgregarUsuario(Usuario nuevoUsuario)
+        public DataTable ObtenerAnimales()
         {
-            string query = $"INSERT INTO Usuarios (NickName, Contra) VALUES ({nuevoUsuario.NickName}, {nuevoUsuario.Contra})";
-            this.EjecutarComando(query);
+            string query = " SELECT * FROM Animales";
+            return ConsultarTabla(query);
         }
 
-        public void AgregarCliente(Cliente nuevoCliente)
+        public DataTable ObtenerEspecies()
         {
-            string query = $"INSERT INTO Usuarios (DNI, Nombre) VALUES ({nuevoCliente.DNI}, {nuevoCliente.Nombre})";
-            this.EjecutarComando(query);
+            string query = " SELECT * FROM Especies";
+            return ConsultarTabla(query);
+        }
+
+        public bool AgregarUsuario(Usuario nuevoUsuario)
+        {
+            string query = $"INSERT INTO Usuarios (NickName, Contra) VALUES ('{nuevoUsuario.NickName}', '{nuevoUsuario.Contra}')";
+            return this.EjecutarComando(query);
+        }
+        public bool AgregarCliente(Cliente nuevoCliente)
+        {
+            string query = $"INSERT INTO Usuarios (DNI, Nombre) VALUES ('{nuevoCliente.DNI}', '{nuevoCliente.Nombre})'";
+            return this.EjecutarComando(query);
+        }
+
+        public bool AgregarAnimal(Animal nuevoAnimal)
+        {
+            string query = $"INSERT INTO Usuarios (Nombre, Peso, Edad, IDCliente, IDEspecie) " +
+                $"VALUES ('{nuevoAnimal.Nombre}', {nuevoAnimal.Peso}, {nuevoAnimal.Edad}, {nuevoAnimal.IDCliente}, {nuevoAnimal.IDEspecie})";
+            return this.EjecutarComando(query);
+        }
+
+        public bool AgregarEspecie(Especie nuevaEspecie)
+        {
+            string query = $"INSERT INTO Especie (Nombre, EdadMadurez, PesoPromedio) " +
+                $"VALUES ('{nuevaEspecie.Nombre}', {nuevaEspecie.EdadMadurez}, {nuevaEspecie.PesoPromedio})";
+            return this.EjecutarComando(query);
         }
 
         public DataTable ConsultarTabla(string query)
@@ -73,25 +99,24 @@ namespace ServiciosVet.DAO
             return dataTable;
         }
 
-        public void EjecutarComando(string comando)
+        public bool EjecutarComando(string comando)
         {
             using (SqlConnection connection = this.ObtenerConexion())
             {
                 try
                 {
-                    connection.Open();
-
                     using (SqlCommand command = new SqlCommand(comando, connection))
                     {
                         command.ExecuteNonQuery();
                     }
+                    return true;
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Error al ejecutar Comando: " + comando + " : " + ex.Message);
+                    return false;
                 }
             }
         }
-
     }
 }
