@@ -52,6 +52,11 @@ namespace ServiciosVet.DAO
             string query = $"INSERT INTO Usuarios (DNI, Nombre) VALUES ({nuevoCliente.DNI}, {nuevoCliente.Nombre})";
             this.EjecutarComando(query);
         }
+        public void AgregarEspecie(Especie nuevoEspecie)
+        {
+            string query = $"INSERT INTO Especies (Nombre) VALUES ({nuevoEspecie.Nombre}";
+            this.EjecutarComando(query);
+        }
 
         public DataTable ConsultarTabla(string query)
         {

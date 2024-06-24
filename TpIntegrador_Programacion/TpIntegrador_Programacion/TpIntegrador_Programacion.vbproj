@@ -91,6 +91,12 @@
     <Compile Include="Formularios\FormularioAltaAnimales.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\FormularioAltaEspecie.Designer.vb">
+      <DependentUpon>FormularioAltaEspecie.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioAltaEspecie.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\FormularioAltaUsuario.Designer.vb">
       <DependentUpon>FormularioAltaUsuario.vb</DependentUpon>
     </Compile>
@@ -126,6 +132,9 @@
     <EmbeddedResource Include="Formularios\FormularioAltaAnimales.resx">
       <DependentUpon>FormularioAltaAnimales.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioAltaEspecie.resx">
+      <DependentUpon>FormularioAltaEspecie.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioAltaUsuario.resx">
       <DependentUpon>FormularioAltaUsuario.vb</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +153,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\ServiciosVet.Models.Especie.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>

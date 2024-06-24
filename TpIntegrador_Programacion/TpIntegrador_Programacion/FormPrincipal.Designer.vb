@@ -42,6 +42,7 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TimerCarga = New System.Windows.Forms.Timer(Me.components)
+        Me.EspecieToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -49,11 +50,11 @@ Partial Class Form1
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.InformesToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.InformesToolStripMenuItem, Me.EspecieToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(710, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(695, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         Me.MenuStrip1.Visible = False
@@ -207,6 +208,12 @@ Partial Class Form1
         'TimerCarga
         '
         '
+        'EspecieToolStripMenuItem
+        '
+        Me.EspecieToolStripMenuItem.Name = "EspecieToolStripMenuItem"
+        Me.EspecieToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
+        Me.EspecieToolStripMenuItem.Text = "Especie"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -247,4 +254,5 @@ Partial Class Form1
     Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents lblInfo2 As Label
     Friend WithEvents lblInfo As Label
+    Friend WithEvents EspecieToolStripMenuItem As ToolStripMenuItem
 End Class
