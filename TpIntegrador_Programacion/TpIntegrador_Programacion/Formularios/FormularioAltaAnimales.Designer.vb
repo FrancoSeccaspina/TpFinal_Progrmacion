@@ -22,6 +22,7 @@ Partial Class FormularioAltaAnimales
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -33,7 +34,11 @@ Partial Class FormularioAltaAnimales
         Me.TxtPesoAnimal = New System.Windows.Forms.TextBox()
         Me.Btn_SeleccionarImagen = New System.Windows.Forms.Button()
         Me.Btn_AgregarAnimal = New System.Windows.Forms.Button()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.EspecieBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EspecieBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -109,12 +114,12 @@ Partial Class FormularioAltaAnimales
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.Label5.Location = New System.Drawing.Point(153, 180)
+        Me.Label5.Location = New System.Drawing.Point(195, 181)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(168, 20)
+        Me.Label5.Size = New System.Drawing.Size(95, 20)
         Me.Label5.TabIndex = 7
-        Me.Label5.Text = "Peso Promedio Animal"
+        Me.Label5.Text = "Peso animal"
         '
         'TxtPesoAnimal
         '
@@ -142,11 +147,40 @@ Partial Class FormularioAltaAnimales
         Me.Btn_AgregarAnimal.Text = "Agregar Animal"
         Me.Btn_AgregarAnimal.UseVisualStyleBackColor = True
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.EspecieBindingSource, "Nombre", True))
+        Me.ComboBox1.DataSource = Me.EspecieBindingSource
+        Me.ComboBox1.DisplayMember = "Nombre"
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(153, 265)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(181, 21)
+        Me.ComboBox1.TabIndex = 11
+        Me.ComboBox1.ValueMember = "Nombre"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Label6.Location = New System.Drawing.Point(219, 238)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(39, 20)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "Tipo"
+        '
+        'EspecieBindingSource
+        '
+        Me.EspecieBindingSource.DataSource = GetType(ServiciosVet.Models.Especie)
+        '
         'FormularioAltaAnimales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(354, 385)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Btn_AgregarAnimal)
         Me.Controls.Add(Me.Btn_SeleccionarImagen)
         Me.Controls.Add(Me.TxtPesoAnimal)
@@ -162,6 +196,7 @@ Partial Class FormularioAltaAnimales
         Me.Name = "FormularioAltaAnimales"
         Me.Text = "FormularioAltaAnimales"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EspecieBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -178,4 +213,7 @@ Partial Class FormularioAltaAnimales
     Friend WithEvents TxtPesoAnimal As TextBox
     Friend WithEvents Btn_SeleccionarImagen As Button
     Friend WithEvents Btn_AgregarAnimal As Button
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents EspecieBindingSource As BindingSource
 End Class

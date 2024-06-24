@@ -64,6 +64,13 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub EspecieToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EspecieToolStripMenuItem.Click
+        Dim formu As New FormularioAltaEspecie
+        formu.MdiParent = Me
+
+        formu.Show()
+    End Sub
+
 
 
 
