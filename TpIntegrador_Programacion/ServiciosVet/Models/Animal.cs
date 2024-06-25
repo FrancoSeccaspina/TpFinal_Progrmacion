@@ -13,13 +13,17 @@ namespace ServiciosVet.Models
         public decimal Peso { get; set; }
         public int Edad { get; set; }
 
-        //public int IDEspecie {  get; set; } preguntar si se tiene que declarar
-        //public int IDCliente {  get; set; } o se encarga la base de datos
-        public Animal(string nombre, decimal peso, int edad)
+        public int IDEspecie { get; set; }
+        public int IDCliente { get; set; }
+
+
+        public Animal(string nombre, decimal peso, int edad, int cliente, int especie)
         {
             this.Nombre = nombre;
             this.Peso = peso;
             this.Edad = edad;
+            this.IDEspecie = cliente;
+            this.IDEspecie = especie;   
         }
 
         public Animal()

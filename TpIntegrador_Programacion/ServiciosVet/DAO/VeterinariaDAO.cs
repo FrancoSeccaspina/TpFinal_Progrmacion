@@ -8,9 +8,22 @@ namespace ServiciosVet.DAO
 {
     public class VeterinariaDAO
     {
-        public VeterinariaDAO()
-        {
 
+        private static VeterinariaDAO instancia;
+        private string StringConexion;
+
+        private VeterinariaDAO()
+        {
+            StringConexion = ConfigurationManager.ConnectionStrings["MiConexionBaseDeDatosVeterinaria"].ConnectionString;
+        }
+
+        public static VeterinariaDAO ObtenerInstancia()
+        {
+            if (instancia == null)
+            {
+                instancia = new VeterinariaDAO();
+            }
+            return instancia;
         }
         public bool InsertNuevaEspecie(Especie nuevaEspecie)
         {
@@ -57,7 +70,6 @@ namespace ServiciosVet.DAO
         {
             try
             {
-                string StringConexion = ConfigurationManager.ConnectionStrings["MiConexionBaseDeDatosVeterinaria"].ConnectionString;
                 SqlConnection connection = new SqlConnection(StringConexion);
                 connection.Open();
                 Console.WriteLine("Conexión exitosa.");
@@ -123,25 +135,24 @@ namespace ServiciosVet.DAO
             return dataTable;
         }
 
-        public void EjecutarComando(string comando)
+        public bool EjecutarComando(string comando)
         {
             using (SqlConnection connection = this.ObtenerConexion())
             {
                 try
                 {
-                    connection.Open();
-
                     using (SqlCommand command = new SqlCommand(comando, connection))
                     {
                         command.ExecuteNonQuery();
                     }
+                    return true;
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Error al ejecutar Comando: " + comando + " : " + ex.Message);
+                    return false;
                 }
             }
         }
-
     }
 }
