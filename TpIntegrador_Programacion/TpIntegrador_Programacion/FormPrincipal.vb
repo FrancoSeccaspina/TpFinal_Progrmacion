@@ -1,4 +1,4 @@
-﻿Imports ServiciosVet.Scripts
+﻿'Imports ServiciosVet.Scripts
 
 Public Class Form1
 
@@ -66,6 +66,13 @@ Public Class Form1
 
     Private Sub EspecieToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EspecieToolStripMenuItem.Click
         Dim formu As New FormularioAltaEspecie
+        formu.MdiParent = Me
+
+        formu.Show()
+    End Sub
+
+    Private Sub AltaClienToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaClienToolStripMenuItem.Click
+        Dim formu As New FormularioAltaCliente
         formu.MdiParent = Me
 
         formu.Show()

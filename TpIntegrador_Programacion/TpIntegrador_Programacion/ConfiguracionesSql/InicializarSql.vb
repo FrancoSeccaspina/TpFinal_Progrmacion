@@ -32,5 +32,18 @@ Public Class InicializarSql
             Throw
         End Try
     End Function
+    Public Function CerrarConexion() As IDbConnection
+        Dim StringDeConexion As String = ConfigurationManager.ConnectionStrings("MiConexionSQLExpress").ConnectionString
+        Dim connection As New SqlConnection(StringDeConexion)
+
+        Try
+            connection.Close()
+            Return connection
+        Catch ex As Exception
+            ' Maneja la excepción aquí según sea necesario
+            Console.WriteLine("Error al cerrar la conexión: " & ex.Message)
+            Return Nothing ' O devuelve otra cosa según la lógica de tu aplicación
+        End Try
+    End Function
 
 End Class

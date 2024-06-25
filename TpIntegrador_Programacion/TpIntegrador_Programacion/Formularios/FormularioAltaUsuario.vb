@@ -1,5 +1,9 @@
-﻿Public Class FormularioAltaUsuario
+﻿Imports ServiciosVet.DAO
+Imports ServiciosVet.Models
+
+Public Class FormularioAltaUsuario
     Private Sub btnAgregarUsuario_Click(sender As Object, e As EventArgs) Handles btnAgregarUsuario.Click
+        Dim dao As New VeterinariaDAO
         Dim usuario = txtUsuario.Text
         Dim contrasenia = txtContrasenia.Text
         Dim confirmarContrasenia = txtConfirContrasenia.Text
@@ -16,10 +20,12 @@
 
         Try
 
+            Dim nuevoUsuario As New Usuario(usuario, contrasenia)
+            dao.InsertNuevoUsuario(nuevoUsuario)
         Catch ex As Exception
 
         End Try
-        MessageBox.Show("¡Animal Agregado con exito!")
+        MessageBox.Show("¡Usuario Agregado con exito!")
         Limpiar()
     End Sub
 

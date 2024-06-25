@@ -30,6 +30,7 @@ Partial Class Form1
         Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoVerdurasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EspecieToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -42,7 +43,7 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TimerCarga = New System.Windows.Forms.Timer(Me.components)
-        Me.EspecieToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AltaClienToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -61,7 +62,7 @@ Partial Class Form1
         '
         'UsuariosToolStripMenuItem
         '
-        Me.UsuariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaUsuarioToolStripMenuItem, Me.AltaAnimalesToolStripMenuItem})
+        Me.UsuariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaUsuarioToolStripMenuItem, Me.AltaAnimalesToolStripMenuItem, Me.AltaClienToolStripMenuItem})
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
         Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
@@ -69,13 +70,13 @@ Partial Class Form1
         'AltaUsuarioToolStripMenuItem
         '
         Me.AltaUsuarioToolStripMenuItem.Name = "AltaUsuarioToolStripMenuItem"
-        Me.AltaUsuarioToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.AltaUsuarioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AltaUsuarioToolStripMenuItem.Text = "Alta Usuario"
         '
         'AltaAnimalesToolStripMenuItem
         '
         Me.AltaAnimalesToolStripMenuItem.Name = "AltaAnimalesToolStripMenuItem"
-        Me.AltaAnimalesToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.AltaAnimalesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AltaAnimalesToolStripMenuItem.Text = "Alta Animales"
         '
         'InformesToolStripMenuItem
@@ -88,14 +89,20 @@ Partial Class Form1
         'ListadoUsuariosToolStripMenuItem
         '
         Me.ListadoUsuariosToolStripMenuItem.Name = "ListadoUsuariosToolStripMenuItem"
-        Me.ListadoUsuariosToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.ListadoUsuariosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ListadoUsuariosToolStripMenuItem.Text = "Listado Usuarios"
         '
         'ListadoVerdurasToolStripMenuItem
         '
         Me.ListadoVerdurasToolStripMenuItem.Name = "ListadoVerdurasToolStripMenuItem"
-        Me.ListadoVerdurasToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.ListadoVerdurasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ListadoVerdurasToolStripMenuItem.Text = "Listado Verduras"
+        '
+        'EspecieToolStripMenuItem
+        '
+        Me.EspecieToolStripMenuItem.Name = "EspecieToolStripMenuItem"
+        Me.EspecieToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
+        Me.EspecieToolStripMenuItem.Text = "Especie"
         '
         'SalirToolStripMenuItem
         '
@@ -208,11 +215,11 @@ Partial Class Form1
         'TimerCarga
         '
         '
-        'EspecieToolStripMenuItem
+        'AltaClienToolStripMenuItem
         '
-        Me.EspecieToolStripMenuItem.Name = "EspecieToolStripMenuItem"
-        Me.EspecieToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
-        Me.EspecieToolStripMenuItem.Text = "Especie"
+        Me.AltaClienToolStripMenuItem.Name = "AltaClienToolStripMenuItem"
+        Me.AltaClienToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AltaClienToolStripMenuItem.Text = "Alta Cliente"
         '
         'Form1
         '
@@ -255,4 +262,5 @@ Partial Class Form1
     Friend WithEvents lblInfo2 As Label
     Friend WithEvents lblInfo As Label
     Friend WithEvents EspecieToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AltaClienToolStripMenuItem As ToolStripMenuItem
 End Class

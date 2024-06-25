@@ -12,6 +12,46 @@ namespace ServiciosVet.DAO
         {
 
         }
+        public bool InsertNuevaEspecie(Especie nuevaEspecie)
+        {
+            string query = $"INSERT INTO Especies (Nombre,EdadMadurez, PesoPromedio) VALUES ('{nuevaEspecie.Nombre}',{nuevaEspecie.EdadMadurez},{nuevaEspecie.PesoPromedio})";
+            IDbConnection conn = this.ObtenerConexion();
+            IDbCommand command = conn.CreateCommand();
+            command.CommandText = query;
+            int rowsAffected = command.ExecuteNonQuery();
+            conn.Close();
+            return rowsAffected > 0;
+        }
+        public bool InsertNuevoUsuario(Usuario nuevoUsuario)
+        {
+            string query = $"INSERT INTO Usuarios (NickName,Contra) VALUES ('{nuevoUsuario.NickName}',{nuevoUsuario.Contra})";
+            IDbConnection conn = this.ObtenerConexion();
+            IDbCommand command = conn.CreateCommand();
+            command.CommandText = query;
+            int rowsAffected = command.ExecuteNonQuery();
+            conn.Close();
+            return rowsAffected > 0;
+        }
+        public bool InsertNuevoAnimal(Animal nuevoanimal)
+        {
+            string query = $"INSERT INTO Animales (Nombre, Peso, Edad) VALUES ('{nuevoanimal.Nombre}',{nuevoanimal.Peso},{nuevoanimal.Edad})";
+            IDbConnection conn = this.ObtenerConexion();
+            IDbCommand command = conn.CreateCommand();
+            command.CommandText = query;
+            int rowsAffected = command.ExecuteNonQuery();
+            conn.Close();
+            return rowsAffected > 0;
+        }
+        public bool InsertNuevoCliente(Cliente nuevocliente)
+        {
+            string query = $"INSERT INTO Clientes (DNI, Nombre) VALUES ('{nuevocliente.DNI}',{nuevocliente.Nombre})";
+            IDbConnection conn = this.ObtenerConexion();
+            IDbCommand command = conn.CreateCommand();
+            command.CommandText = query;
+            int rowsAffected = command.ExecuteNonQuery();
+            conn.Close();
+            return rowsAffected > 0;
+        }
 
         public SqlConnection ObtenerConexion()
         {
@@ -41,20 +81,25 @@ namespace ServiciosVet.DAO
             string query = " SELECT * FROM Clientes";
             return ConsultarTabla(query);
         }
-        public void AgregarUsuario(Usuario nuevoUsuario)
-        {
-            string query = $"INSERT INTO Usuarios (NickName, Contra) VALUES ({nuevoUsuario.NickName}, {nuevoUsuario.Contra})";
-            this.EjecutarComando(query);
-        }
+        //public void AgregarUsuario(Usuario nuevoUsuario)
+        //{
+        //    string query = $"INSERT INTO Usuarios (NickName, Contra) VALUES ({nuevoUsuario.NickName}, {nuevoUsuario.Contra})";
+        //    this.EjecutarComando(query);
+        //}
 
         public void AgregarCliente(Cliente nuevoCliente)
         {
             string query = $"INSERT INTO Usuarios (DNI, Nombre) VALUES ({nuevoCliente.DNI}, {nuevoCliente.Nombre})";
             this.EjecutarComando(query);
         }
+        public DataTable ObtenerEspecies()
+        {
+            string query = "Select * FROM Especies";
+                return ConsultarTabla(query);
+        }
         public void AgregarEspecie(Especie nuevoEspecie)
         {
-            string query = $"INSERT INTO Especies (Nombre) VALUES ({nuevoEspecie.Nombre}";
+            string query = $"INSERT INTO Especies (Nombre) VALUES ('{nuevoEspecie.Nombre}')";
             this.EjecutarComando(query);
         }
 

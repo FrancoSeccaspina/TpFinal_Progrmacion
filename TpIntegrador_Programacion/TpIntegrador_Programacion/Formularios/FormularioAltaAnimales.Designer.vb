@@ -34,11 +34,13 @@ Partial Class FormularioAltaAnimales
         Me.TxtPesoAnimal = New System.Windows.Forms.TextBox()
         Me.Btn_SeleccionarImagen = New System.Windows.Forms.Button()
         Me.Btn_AgregarAnimal = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.CBAnimal = New System.Windows.Forms.ComboBox()
         Me.EspecieBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.EspecieBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EspecieBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EspecieBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -147,17 +149,20 @@ Partial Class FormularioAltaAnimales
         Me.Btn_AgregarAnimal.Text = "Agregar Animal"
         Me.Btn_AgregarAnimal.UseVisualStyleBackColor = True
         '
-        'ComboBox1
+        'CBAnimal
         '
-        Me.ComboBox1.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.EspecieBindingSource, "Nombre", True))
-        Me.ComboBox1.DataSource = Me.EspecieBindingSource
-        Me.ComboBox1.DisplayMember = "Nombre"
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(153, 265)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(181, 21)
-        Me.ComboBox1.TabIndex = 11
-        Me.ComboBox1.ValueMember = "Nombre"
+        Me.CBAnimal.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.EspecieBindingSource, "Nombre", True))
+        Me.CBAnimal.FormattingEnabled = True
+        Me.CBAnimal.Items.AddRange(New Object() {"Gato", "Perro"})
+        Me.CBAnimal.Location = New System.Drawing.Point(153, 265)
+        Me.CBAnimal.Name = "CBAnimal"
+        Me.CBAnimal.Size = New System.Drawing.Size(181, 21)
+        Me.CBAnimal.TabIndex = 11
+        Me.CBAnimal.Text = "Perro"
+        '
+        'EspecieBindingSource
+        '
+        Me.EspecieBindingSource.DataSource = GetType(ServiciosVet.Models.Especie)
         '
         'Label6
         '
@@ -170,9 +175,9 @@ Partial Class FormularioAltaAnimales
         Me.Label6.TabIndex = 12
         Me.Label6.Text = "Tipo"
         '
-        'EspecieBindingSource
+        'EspecieBindingSource1
         '
-        Me.EspecieBindingSource.DataSource = GetType(ServiciosVet.Models.Especie)
+        Me.EspecieBindingSource1.DataSource = GetType(ServiciosVet.Models.Especie)
         '
         'FormularioAltaAnimales
         '
@@ -180,7 +185,7 @@ Partial Class FormularioAltaAnimales
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(354, 385)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.CBAnimal)
         Me.Controls.Add(Me.Btn_AgregarAnimal)
         Me.Controls.Add(Me.Btn_SeleccionarImagen)
         Me.Controls.Add(Me.TxtPesoAnimal)
@@ -197,6 +202,7 @@ Partial Class FormularioAltaAnimales
         Me.Text = "FormularioAltaAnimales"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EspecieBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EspecieBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -213,7 +219,8 @@ Partial Class FormularioAltaAnimales
     Friend WithEvents TxtPesoAnimal As TextBox
     Friend WithEvents Btn_SeleccionarImagen As Button
     Friend WithEvents Btn_AgregarAnimal As Button
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents CBAnimal As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents EspecieBindingSource As BindingSource
+    Friend WithEvents EspecieBindingSource1 As BindingSource
 End Class

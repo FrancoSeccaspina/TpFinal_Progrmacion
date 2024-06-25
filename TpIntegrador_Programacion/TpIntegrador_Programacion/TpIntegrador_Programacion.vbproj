@@ -91,6 +91,12 @@
     <Compile Include="Formularios\FormularioAltaAnimales.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\FormularioAltaCliente.Designer.vb">
+      <DependentUpon>FormularioAltaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioAltaCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\FormularioAltaEspecie.Designer.vb">
       <DependentUpon>FormularioAltaEspecie.vb</DependentUpon>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioAltaAnimales.resx">
       <DependentUpon>FormularioAltaAnimales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioAltaCliente.resx">
+      <DependentUpon>FormularioAltaCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioAltaEspecie.resx">
       <DependentUpon>FormularioAltaEspecie.vb</DependentUpon>

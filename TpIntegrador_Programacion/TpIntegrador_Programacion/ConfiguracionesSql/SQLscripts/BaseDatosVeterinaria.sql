@@ -33,3 +33,9 @@ CREATE TABLE Animales (
     IDCliente INT FOREIGN KEY REFERENCES Clientes(ID),
     IDEspecie INT FOREIGN KEY REFERENCES Especies(ID)
 );
+
+
+select * from Especies;
+select * from Usuarios;
+select * from Animales;
+select * from Clientes;
