@@ -12,19 +12,11 @@ namespace ServiciosVet.DAO
         private static VeterinariaDAO instancia;
         private string StringConexion;
 
-        private VeterinariaDAO()
+        public VeterinariaDAO()
         {
             StringConexion = ConfigurationManager.ConnectionStrings["MiConexionBaseDeDatosVeterinaria"].ConnectionString;
         }
 
-        public static VeterinariaDAO ObtenerInstancia()
-        {
-            if (instancia == null)
-            {
-                instancia = new VeterinariaDAO();
-            }
-            return instancia;
-        }
         public bool InsertNuevaEspecie(Especie nuevaEspecie)
         {
             string query = $"INSERT INTO Especies (Nombre,EdadMadurez, PesoPromedio) VALUES ('{nuevaEspecie.Nombre}',{nuevaEspecie.EdadMadurez},{nuevaEspecie.PesoPromedio})";
@@ -35,6 +27,7 @@ namespace ServiciosVet.DAO
             conn.Close();
             return rowsAffected > 0;
         }
+
         public bool InsertNuevoUsuario(Usuario nuevoUsuario)
         {
             string query = $"INSERT INTO Usuarios (NickName,Contra) VALUES ('{nuevoUsuario.NickName}',{nuevoUsuario.Contra})";
