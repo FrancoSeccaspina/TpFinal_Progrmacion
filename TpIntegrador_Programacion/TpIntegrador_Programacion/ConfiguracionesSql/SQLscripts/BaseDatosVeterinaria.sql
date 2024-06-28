@@ -42,3 +42,8 @@ SELECT 'admin', '123'
 WHERE NOT EXISTS (
     SELECT 1 FROM Usuarios WHERE NickName = 'admin'
 );
+
+INSERT INTO Usuarios (NickName, Contra) VALUES ('jose', '000');
+
+Select * from Usuarios;
+SELECT * FROM Usuarios WHERE NickName = 'ADMIN' AND Contra = '123';
