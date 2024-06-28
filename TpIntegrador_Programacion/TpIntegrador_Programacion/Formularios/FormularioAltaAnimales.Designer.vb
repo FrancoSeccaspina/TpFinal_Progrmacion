@@ -35,8 +35,8 @@ Partial Class FormularioAltaAnimales
         Me.Btn_SeleccionarImagen = New System.Windows.Forms.Button()
         Me.Btn_AgregarAnimal = New System.Windows.Forms.Button()
         Me.CBAnimal = New System.Windows.Forms.ComboBox()
-        Me.EspecieBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.EspecieBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EspecieBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EspecieBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -153,16 +153,10 @@ Partial Class FormularioAltaAnimales
         '
         Me.CBAnimal.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.EspecieBindingSource, "Nombre", True))
         Me.CBAnimal.FormattingEnabled = True
-        Me.CBAnimal.Items.AddRange(New Object() {"Gato", "Perro"})
         Me.CBAnimal.Location = New System.Drawing.Point(153, 265)
         Me.CBAnimal.Name = "CBAnimal"
         Me.CBAnimal.Size = New System.Drawing.Size(181, 21)
         Me.CBAnimal.TabIndex = 11
-        Me.CBAnimal.Text = "Perro"
-        '
-        'EspecieBindingSource
-        '
-        Me.EspecieBindingSource.DataSource = GetType(ServiciosVet.Models.Especie)
         '
         'Label6
         '
@@ -174,6 +168,10 @@ Partial Class FormularioAltaAnimales
         Me.Label6.Size = New System.Drawing.Size(39, 20)
         Me.Label6.TabIndex = 12
         Me.Label6.Text = "Tipo"
+        '
+        'EspecieBindingSource
+        '
+        Me.EspecieBindingSource.DataSource = GetType(ServiciosVet.Models.Especie)
         '
         'EspecieBindingSource1
         '
@@ -199,7 +197,7 @@ Partial Class FormularioAltaAnimales
         Me.Controls.Add(Me.Label1)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FormularioAltaAnimales"
-        Me.Text = "FormularioAltaAnimales"
+        Me.Text = " "
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EspecieBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EspecieBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()

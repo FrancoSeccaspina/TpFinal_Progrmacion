@@ -39,3 +39,6 @@ select * from Especies;
 select * from Usuarios;
 select * from Animales;
 select * from Clientes;
+
+
+SELECT Nombre FROM Especies;

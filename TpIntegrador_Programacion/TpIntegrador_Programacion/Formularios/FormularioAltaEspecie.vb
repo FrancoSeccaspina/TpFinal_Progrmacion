@@ -12,9 +12,9 @@ Public Class FormularioAltaEspecie
         Else
 
             Dim nombreEspecie = txtNombreEspecie.Text
-            Dim peso = 0
-            Dim edad = 0
-            Dim especie As New Especie(nombreEspecie, peso, edad)
+            Dim peso = txtPesoPromedio.Text
+            Dim edad = txtEdadMadurez.Text
+            Dim especie As New Especie(nombreEspecie, edad, peso)
             dao.InsertNuevaEspecie(especie)
 
             MessageBox.Show("La Especie se agregó con éxito.")
@@ -23,4 +23,7 @@ Public Class FormularioAltaEspecie
         End If
     End Sub
 
+    Private Sub FormularioAltaEspecie_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

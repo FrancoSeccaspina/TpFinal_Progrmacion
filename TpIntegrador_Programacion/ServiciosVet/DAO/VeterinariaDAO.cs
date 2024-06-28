@@ -1,5 +1,6 @@
 ﻿using ServiciosVet.Models;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -57,6 +58,29 @@ namespace ServiciosVet.DAO
             int rowsAffected = command.ExecuteNonQuery();
             conn.Close();
             return rowsAffected > 0;
+        }
+        public List<string> ObtenerNombreEspecies()
+        {
+            string query = "SELECT Nombre FROM Especies;";
+            List<string> nombres = new List<string>();
+
+            using (IDbConnection conn = this.ObtenerConexion())
+            {
+                IDbCommand command = conn.CreateCommand();
+                command.CommandText = query;
+                //conn.Open();
+
+                using (IDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        nombres.Add(reader.GetString(0));
+                    }
+                }
+                conn.Close();
+            }
+
+            return nombres;
         }
 
         public SqlConnection ObtenerConexion()
