@@ -3,6 +3,7 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Contracts;
 
 namespace ServiciosVet.DAO
 {
@@ -108,6 +109,12 @@ namespace ServiciosVet.DAO
             this.EjecutarComando(query);
         }
 
+        public bool VerificarExistenciaDeUsuario(string usuario, string contra)
+        {
+            string query = $"SELECT * FROM Usuarios WHERE NickName = '{usuario}' AND Contra = '{contra}'";
+            return this.ConsultarTabla(query).Rows.Count > 0;
+        }
+
         public DataTable ConsultarTabla(string query)
         {
             DataTable dataTable = new DataTable();
@@ -119,6 +126,7 @@ namespace ServiciosVet.DAO
                 try
                 {
                     adapter.Fill(dataTable);
+                    Console.Write("Consulta ejecutada con exito : " + query);
                 }
                 catch (Exception ex)
                 {

@@ -34,8 +34,11 @@ CREATE TABLE Animales (
     IDEspecie INT FOREIGN KEY REFERENCES Especies(ID)
 );
 
+ALTER TABLE Usuarios
+ALTER COLUMN Contra VARCHAR(100) NOT NULL;
 
-select * from Especies;
-select * from Usuarios;
-select * from Animales;
-select * from Clientes;
+INSERT INTO Usuarios (NickName, Contra)
+SELECT 'admin', '123'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Usuarios WHERE NickName = 'admin'
+);
