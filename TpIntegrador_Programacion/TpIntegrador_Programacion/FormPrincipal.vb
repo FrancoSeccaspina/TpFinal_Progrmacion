@@ -1,6 +1,9 @@
 ﻿'Imports ServiciosVet.Scripts
 
+Imports ServiciosVet.DAO
+
 Public Class Form1
+    Dim Dao As VeterinariaDAO
 
     Private Sub AltaUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaUsuarioToolStripMenuItem.Click
         Dim formu As New FormularioAltaUsuario
@@ -26,18 +29,22 @@ Public Class Form1
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim contraseña = "123"
-        Dim usuario = "pepe"
-        Dim mensaje_con = $"Contraseña incorrecta, ingrese '{contraseña}'"
-        Dim mensaje_usu = $"Usuario inexistente, ingrese '{usuario}'"
-        If TextBox1.Text = "pepe" And TextBox2.Text = "123" Then
+        Dim dao As New VeterinariaDAO()
+        Dim usuario As String = TextBox1.Text.Trim()
+        Dim contra As String = TextBox2.Text.Trim()
+
+        Dim mensajeUsuario As String = "Usuario inexistente"
+        Dim mensajeContra As String = "Contraseña incorrecta"
+
+        If dao.VerificarExistenciaDeUsuario(usuario, contra) Then
             TimerCarga.Enabled = True
-            mensaje_con = "Cargando....."
-            mensaje_usu = "Cargando....."
+            mensajeUsuario = "Cargando..."
+            mensajeContra = "Cargando..."
         End If
-        lblInfo.Text = mensaje_usu
+
+        lblInfo.Text = mensajeUsuario
+        lblInfo2.Text = mensajeContra
         lblInfo.Visible = True
-        lblInfo2.Text = mensaje_con
         lblInfo2.Visible = True
 
     End Sub
