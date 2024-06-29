@@ -273,7 +273,7 @@ namespace ServiciosVet.DAO
                             "FROM Clientes c " +
                             "LEFT JOIN Animales a ON c.ID = a.IDCliente " +
                             "GROUP BY c.Nombre " +
-                            "ORDER BY CantidadAnimales ASC;";
+                            "ORDER BY CantidadAnimales;";
 
             return this.ConsultarTabla(query);
         }
