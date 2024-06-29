@@ -38,6 +38,8 @@ Partial Class FormularioAltaAnimales
         Me.Label6 = New System.Windows.Forms.Label()
         Me.EspecieBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EspecieBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.CBCliente = New System.Windows.Forms.ComboBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EspecieBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EspecieBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -142,7 +144,7 @@ Partial Class FormularioAltaAnimales
         '
         'Btn_AgregarAnimal
         '
-        Me.Btn_AgregarAnimal.Location = New System.Drawing.Point(12, 299)
+        Me.Btn_AgregarAnimal.Location = New System.Drawing.Point(12, 382)
         Me.Btn_AgregarAnimal.Name = "Btn_AgregarAnimal"
         Me.Btn_AgregarAnimal.Size = New System.Drawing.Size(326, 62)
         Me.Btn_AgregarAnimal.TabIndex = 10
@@ -177,11 +179,33 @@ Partial Class FormularioAltaAnimales
         '
         Me.EspecieBindingSource1.DataSource = GetType(ServiciosVet.Models.Especie)
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Label7.Location = New System.Drawing.Point(219, 309)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(58, 20)
+        Me.Label7.TabIndex = 14
+        Me.Label7.Text = "Cliente"
+        '
+        'CBCliente
+        '
+        Me.CBCliente.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.EspecieBindingSource, "Nombre", True))
+        Me.CBCliente.FormattingEnabled = True
+        Me.CBCliente.Location = New System.Drawing.Point(153, 336)
+        Me.CBCliente.Name = "CBCliente"
+        Me.CBCliente.Size = New System.Drawing.Size(181, 21)
+        Me.CBCliente.TabIndex = 13
+        '
         'FormularioAltaAnimales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(354, 385)
+        Me.ClientSize = New System.Drawing.Size(356, 456)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.CBCliente)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.CBAnimal)
         Me.Controls.Add(Me.Btn_AgregarAnimal)
@@ -221,4 +245,6 @@ Partial Class FormularioAltaAnimales
     Friend WithEvents Label6 As Label
     Friend WithEvents EspecieBindingSource As BindingSource
     Friend WithEvents EspecieBindingSource1 As BindingSource
+    Friend WithEvents Label7 As Label
+    Friend WithEvents CBCliente As ComboBox
 End Class

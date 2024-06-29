@@ -19,14 +19,18 @@ Public Class FormularioAltaUsuario
         End If
 
         Try
-
+            If dao.UsuarioExistente(usuario) Then
+                MessageBox.Show("Error. El nombre de usuario ya existe")
+                Return
+            End If
             Dim nuevoUsuario As New Usuario(usuario, contrasenia)
             dao.InsertNuevoUsuario(nuevoUsuario)
+            MessageBox.Show("¡Usuario Agregado con exito!")
+            Limpiar()
         Catch ex As Exception
-
+            MessageBox.Show("Error al agregar usuario.")
         End Try
-        MessageBox.Show("¡Usuario Agregado con exito!")
-        Limpiar()
+
     End Sub
 
     Private Sub Limpiar()

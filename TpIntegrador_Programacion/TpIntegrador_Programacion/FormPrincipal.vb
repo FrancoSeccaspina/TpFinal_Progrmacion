@@ -20,8 +20,8 @@ Public Class Form1
         formu.Show()
     End Sub
 
-    Private Sub ListadoUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoUsuariosToolStripMenuItem.Click
-        Dim formu As New FormularioListadoUsuarios
+    Private Sub ListaBusquedaPorPesoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoUsuariosToolStripMenuItem.Click
+        Dim formu As New FormularioPeso
 
         formu.MdiParent = Me
 
@@ -29,19 +29,16 @@ Public Class Form1
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim dao As New VeterinariaDAO()
+        Dim dao As New VeterinariaDAO
         Dim usuario As String = TextBox1.Text.Trim()
         Dim contra As String = TextBox2.Text.Trim()
-
         Dim mensajeUsuario As String = "Usuario inexistente"
         Dim mensajeContra As String = "Contraseña incorrecta"
-
         If dao.VerificarExistenciaDeUsuario(usuario, contra) Then
             TimerCarga.Enabled = True
             mensajeUsuario = "Cargando..."
             mensajeContra = "Cargando..."
         End If
-
         lblInfo.Text = mensajeUsuario
         lblInfo2.Text = mensajeContra
         lblInfo.Visible = True
@@ -51,9 +48,8 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim sql As New InicializarSql()
         sql.Iniciar()
+
     End Sub
-
-
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Me.Close()
     End Sub
@@ -84,25 +80,4 @@ Public Class Form1
 
         formu.Show()
     End Sub
-
-
-
-
-    'Private Sub ProgressBar1_Click(sender As Object, e As EventArgs) Handles ProgressBar1.Click
-    '    If ProgressBar1.Value = ProgressBar1.Maximum Then
-    '        Me.Close()
-    '    Else
-    '        Dim nuevoValor = ProgressBar1.Value + 10
-    '        ProgressBar1.Value = Math.Min(nuevoValor, ProgressBar1.Maximum)
-    '    End If
-    'End Sub
-
-    'Private Sub TimerCarga_Tick(sender As Object, e As EventArgs) Handles TimerCarga.Tick
-    '    If ProgressBar1.Value = ProgressBar1.Maximum Then
-    '        Me.Close()
-    '    Else
-    '        Dim nuevoValor = ProgressBar1.Value + 10
-    '        ProgressBar1.Value = Math.Min(nuevoValor, ProgressBar1.Maximum)
-    '    End If
-    'End Sub
 End Class

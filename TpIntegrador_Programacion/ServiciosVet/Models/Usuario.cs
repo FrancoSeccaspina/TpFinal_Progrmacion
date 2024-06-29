@@ -10,12 +10,12 @@ namespace ServiciosVet.Models
     {
         public int Id { get; set; }
         public string NickName { get; set; }
-        public int Contra { get; set; }
+        public string Contranueva { get; set; }
 
-        public Usuario(string nickName, int contra)
+        public Usuario(string nickName, string contranueva)
         {
             this.NickName = nickName;
-            this.Contra = contra;
+            this.Contranueva = contranueva;
         }
 
         public Usuario()

@@ -14,16 +14,17 @@ namespace ServiciosVet.Models
         public int Edad { get; set; }
 
         public string IDEspecie { get; set; }
-        //public int IDCliente { get; set; }
+        public string IDCliente { get; set; }
 
 
-        public Animal(string nombre, decimal peso, int edad, string iDEspecie)
+        public Animal(string nombre, decimal peso, int edad, string iDEspecie, string iDCliente)
         {
             this.Nombre = nombre;
             this.Peso = peso;
             this.Edad = edad;
             this.IDEspecie = iDEspecie;
-            //    this.IDEspecie = cliente;
+            this.IDCliente = iDCliente;
+            //this.IDEspecie = cliente;
             //    this.IDEspecie = especie;   
         }
 

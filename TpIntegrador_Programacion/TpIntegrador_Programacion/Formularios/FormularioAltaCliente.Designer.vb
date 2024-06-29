@@ -55,7 +55,7 @@ Partial Class FormularioAltaCliente
         '
         'txtDNI
         '
-        Me.txtDNI.Location = New System.Drawing.Point(119, 139)
+        Me.txtDNI.Location = New System.Drawing.Point(124, 76)
         Me.txtDNI.Margin = New System.Windows.Forms.Padding(2)
         Me.txtDNI.Name = "txtDNI"
         Me.txtDNI.Size = New System.Drawing.Size(200, 20)
@@ -63,7 +63,7 @@ Partial Class FormularioAltaCliente
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(119, 73)
+        Me.txtNombre.Location = New System.Drawing.Point(124, 128)
         Me.txtNombre.Margin = New System.Windows.Forms.Padding(2)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(200, 20)
@@ -73,7 +73,7 @@ Partial Class FormularioAltaCliente
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label6.Location = New System.Drawing.Point(21, 142)
+        Me.Label6.Location = New System.Drawing.Point(40, 77)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(29, 17)
@@ -84,7 +84,7 @@ Partial Class FormularioAltaCliente
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label2.Location = New System.Drawing.Point(30, 73)
+        Me.Label2.Location = New System.Drawing.Point(27, 128)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(58, 17)

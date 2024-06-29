@@ -11,7 +11,7 @@ namespace ServiciosVet.DAO
     public class VeterinariaDAO
     {
 
-        private static VeterinariaDAO instancia;
+        //private static VeterinariaDAO instancia;
         private string StringConexion;
 
         public VeterinariaDAO()
@@ -32,7 +32,7 @@ namespace ServiciosVet.DAO
 
         public bool InsertNuevoUsuario(Usuario nuevoUsuario)
         {
-            string query = $"INSERT INTO Usuarios (NickName,Contra) VALUES ('{nuevoUsuario.NickName}',{nuevoUsuario.Contra})";
+            string query = $"INSERT INTO Usuarios (NickName,Contranueva) VALUES ('{nuevoUsuario.NickName}',{nuevoUsuario.Contranueva})";
             IDbConnection conn = this.ObtenerConexion();
             IDbCommand command = conn.CreateCommand();
             command.CommandText = query;
@@ -52,7 +52,7 @@ namespace ServiciosVet.DAO
         }
         public bool InsertNuevoCliente(Cliente nuevocliente)
         {
-            string query = $"INSERT INTO Clientes (DNI, Nombre) VALUES ('{nuevocliente.DNI}',{nuevocliente.Nombre})";
+            string query = $"INSERT INTO Clientes (Nombre, DNI) VALUES ('{nuevocliente.Nombre}',{nuevocliente.DNI})";
             IDbConnection conn = this.ObtenerConexion();
             IDbCommand command = conn.CreateCommand();
             command.CommandText = query;
@@ -82,6 +82,73 @@ namespace ServiciosVet.DAO
             }
 
             return nombres;
+        }
+
+        public List<string> ObtenerNombreClientes()
+        {
+            string query = "SELECT Nombre FROM Clientes;";
+            List<string> nombres = new List<string>();
+
+            using (IDbConnection conn = this.ObtenerConexion())
+            {
+                IDbCommand command = conn.CreateCommand();
+                command.CommandText = query;
+                //conn.Open();
+
+                using (IDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        nombres.Add(reader.GetString(0));
+                    }
+                }
+                conn.Close();
+            }
+
+            return nombres;
+        }
+        //public List<string> ObtenerContraUsuario()
+        //{
+        //    string query = "SELECT Contranueva from Usuarios;";
+        //    List<string> contras = new List<string>();
+
+        //    using (IDbConnection conn = this.ObtenerConexion())
+        //    {
+        //        IDbCommand command = conn.CreateCommand();
+        //        command.CommandText = query;
+        //        //conn.Open();
+
+        //        using (IDataReader reader = command.ExecuteReader())
+        //        {
+        //            while (reader.Read())
+        //            {
+        //                contras.Add(reader.GetString(0));
+        //            }
+        //        }
+        //        conn.Close();
+        //    }
+
+        //    return contras;
+        //}
+        public Usuario GetUsuarioBasedeDatos(string nickName, string contranueva) { 
+            //Usuario usuario = new Usuario();
+            string query = "Select * from Usuarios;";
+            IDbConnection conn = this.ObtenerConexion();
+            IDbCommand command = conn.CreateCommand();
+            command.CommandText = query;
+            IDataReader reader = command.ExecuteReader();
+            Usuario usuarioEncontrado = null;
+            if(reader.Read())
+            {
+                usuarioEncontrado = new Usuario()
+                {
+                    Id = reader.GetInt32(0),
+                    NickName = nickName,
+                    Contranueva = contranueva,
+                };
+            }
+            conn.Close();
+            return usuarioEncontrado;
         }
 
         public SqlConnection ObtenerConexion()
@@ -133,12 +200,60 @@ namespace ServiciosVet.DAO
             this.EjecutarComando(query);
         }
 
-        public bool VerificarExistenciaDeUsuario(string usuario, string contra)
+        public bool VerificarExistenciaDeUsuario(string usuario, string contranueva)
         {
-            string query = $"SELECT * FROM Usuarios WHERE NickName = '{usuario}' AND Contra = '{contra}'";
+            string query = $"SELECT * FROM Usuarios WHERE NickName = '{usuario}' AND Contranueva = '{contranueva}'";
             return this.ConsultarTabla(query).Rows.Count > 0;
         }
+        //public Usuario VerificarContrasenia(string contranueva)
+        //{
+        //    string query = "Select Contranueva from Usuarios";
+        //    IDbConnection conn = this.ObtenerConexion();
+        //    IDbCommand command = conn.CreateCommand();
+        //    command.CommandText = query;
+        //    IDataReader reader = command.ExecuteReader();
+        //    Usuario UsuarioEncontrado = null;
+        //    if (reader.Read())
+        //    {
+        //        UsuarioEncontrado = new Usuario()
+        //        {
+        //            Id = reader.GetInt32(0),
+        //            NickName = reader.GetString(1),
+        //            Contranueva = reader.GetString(2)
+                    
+        //        };
+        //    }
+        //    conn.Close();
+        //    //ConsultarTabla(query);
+        //    return UsuarioEncontrado;//contraseniaEncontrada
+        //}
+        public bool UsuarioExistente (string usuario)
+        {
+            string query = $"SELECT NickName FROM Usuarios WHERE NickName = '{usuario}'";
+            return this.ConsultarTabla(query).Rows.Count > 0;
 
+
+        }
+        public bool EspecieExistente(string especie)
+        {
+            string query = $"SELECT Nombre from Especies where Nombre = '{especie}'";
+            return this.ConsultarTabla(query).Rows.Count > 0;
+
+
+        }
+        public bool ClienteExistente(string dni)
+        {
+            string query = $"SELECT DNI FROM Clientes WHERE DNI = '{dni}'";
+            return this.ConsultarTabla(query).Rows.Count > 0;
+
+
+        }
+        //public List<Animal> GetAnimalList()
+        //{
+        //    IDbConnection conn = this.ObtenerConexion();
+        //    IDbCommand command = conn.CreateCommand();
+        //    command.CommandText = "Select * from Especies ";
+        //}
         public DataTable ConsultarTabla(string query)
         {
             DataTable dataTable = new DataTable();

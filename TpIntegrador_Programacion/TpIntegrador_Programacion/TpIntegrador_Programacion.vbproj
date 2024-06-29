@@ -109,10 +109,10 @@
     <Compile Include="Formularios\FormularioAltaUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FormularioListadoUsuarios.Designer.vb">
-      <DependentUpon>FormularioListadoUsuarios.vb</DependentUpon>
+    <Compile Include="Formularios\FormularioPeso.Designer.vb">
+      <DependentUpon>FormularioPeso.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FormularioListadoUsuarios.vb">
+    <Compile Include="Formularios\FormularioPeso.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -147,8 +147,8 @@
     <EmbeddedResource Include="Formularios\FormularioAltaUsuario.resx">
       <DependentUpon>FormularioAltaUsuario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FormularioListadoUsuarios.resx">
-      <DependentUpon>FormularioListadoUsuarios.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\FormularioPeso.resx">
+      <DependentUpon>FormularioPeso.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

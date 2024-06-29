@@ -28,19 +28,23 @@ Public Class FormularioAltaAnimales
                 Console.WriteLine("No se pudo convertir el valor seleccionado a un entero.")
             End Try
         End If
-
+        If CBAnimal.SelectedItem Is Nothing Then
+            MessageBox.Show("Por favor ingresar una Especie y si no está Creela en la pestaña Agregar Especie")
+            Return
+        End If
+        If CBCliente.SelectedItem Is Nothing Then
+            MessageBox.Show("Por favor ingresar un Cliente  y si no está Creelo en la pestaña Nuevo Cliente")
+            Return
+        End If
         If CBAnimal.SelectedItem IsNot Nothing Then
             Dim especieAnimals As String = CBAnimal.SelectedItem.ToString()
             Console.WriteLine("La especie seleccionada es: " & especieAnimal)
+            Dim nombreCliente As String = CBCliente.SelectedItem.ToString()
             If TxtNombreAnimal.Text.Trim() <> "" And TxtEdadAnimal.Text.Trim() <> "" And TxtPesoAnimal.Text.Trim() <> "" Then
                 Dim nombreAnimal = TxtNombreAnimal.Text
                 Dim edadAnimal = TxtEdadAnimal.Text
                 Dim pesoAnimal = TxtPesoAnimal.Text
-
-
-                Dim cliente = 1
-                Dim especie = 1
-                Dim nuevoAnimal As New Animal(nombreAnimal, pesoAnimal, edadAnimal, especieAnimals)
+                Dim nuevoAnimal As New Animal(nombreAnimal, pesoAnimal, edadAnimal, especieAnimals, nombreCliente)
                 dao.InsertNuevoAnimal(nuevoAnimal)
                 MessageBox.Show("¡Animal Agregado con exito!")
                 Limpiar()
@@ -68,6 +72,12 @@ Public Class FormularioAltaAnimales
         CBAnimal.Items.Clear()
         For Each nombre As String In nombreEspecies
             CBAnimal.Items.Add(nombre)
+        Next
+        'Posible muestra de combobox Nombre de Cliente
+        Dim nombreClientes As List(Of String) = dao.ObtenerNombreClientes()
+        CBCliente.Items.Clear()
+        For Each nombre As String In nombreClientes
+            CBCliente.Items.Add(nombre)
         Next
     End Sub
 
