@@ -10,8 +10,6 @@ namespace ServiciosVet.DAO
 {
     public class VeterinariaDAO
     {
-
-        //private static VeterinariaDAO instancia;
         private string StringConexion;
 
         public VeterinariaDAO()
@@ -151,21 +149,7 @@ namespace ServiciosVet.DAO
             return usuarioEncontrado;
         }
 
-        public SqlConnection ObtenerConexion()
-        {
-            try
-            {
-                SqlConnection connection = new SqlConnection(StringConexion);
-                connection.Open();
-                Console.WriteLine("Conexión exitosa.");
-                return connection;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-                throw;
-            }
-        }
+
 
         public DataTable ObtenerUsuarios()
         {
@@ -254,6 +238,72 @@ namespace ServiciosVet.DAO
         //    IDbCommand command = conn.CreateCommand();
         //    command.CommandText = "Select * from Especies ";
         //}
+
+        /// <summary>
+        /// Mostrar el peso máximo, mínimo y promedio de agrupado por especie de todos los animales. 
+        /// Este reporte debe contener un filtro para poder seleccionar el rango de edad. 
+        /// (Pueden hacerlo por medio de dos textbox e incluir su valor en el texto de la query)
+        /// </summary>
+        /// <param name="ran1"></param>
+        /// <param name="ran2"></param>
+        /// <returns>DataTable: con los resultados de la consulta</returns>
+        public DataTable ObtenerPrimerReporte(int ran1, int ran2)
+        {
+            string query = $"SELECT " +
+                            $"e.Nombre AS Especie, " +
+                            $"MAX(a.Peso) AS PesoMaximo, " +
+                            $"MIN(a.Peso) AS PesoMinimo, " +
+                            $"AVG(a.Peso) AS PesoPromedio " +
+                            $"FROM Animales AS a " +
+                            $"JOIN Especies AS e " +
+                            $"ON a.IDEspecie = e.ID " +
+                            $"WHERE a.Edad BETWEEN {ran1} AND {ran2} " +
+                            $"GROUP BY e.Nombre;";
+
+            return this.ConsultarTabla(query);
+        }
+
+        /// <summary>
+        /// Mostrar la cantidad de animales con los que cuenta cada dueño ordenado de menor a mayor
+        /// </summary>
+        /// <returns>DataTable: con los resultados de la consulta</returns>
+        public DataTable ObtenerSegundoReporte()
+        {
+            string query ="SELECT c.Nombre AS Dueño, COUNT(a.ID) AS CantidadAnimales " +
+                            "FROM Clientes c " +
+                            "LEFT JOIN Animales a ON c.ID = a.IDCliente " +
+                            "GROUP BY c.Nombre " +
+                            "ORDER BY CantidadAnimales ASC;";
+
+            return this.ConsultarTabla(query);
+        }
+
+        /// <summary>
+        ///     Se conecta a la base de datos BaseDatosVeterinaria
+        /// </summary>
+        /// <returns>SqlConnection: conexion a la base de datos abierto (open) </returns>
+        public SqlConnection ObtenerConexion()
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection(StringConexion);
+                connection.Open();
+                Console.WriteLine("Conexión exitosa.");
+                return connection;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                throw;
+            }
+        }
+
+
+        /// <summary>
+        /// Consultas de selección SQL a la base de datos cualquier, devolviendo un objeto de tipo DataTable 
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns>Resultado de la consulta: DataTable</returns>
         public DataTable ConsultarTabla(string query)
         {
             DataTable dataTable = new DataTable();
@@ -275,6 +325,12 @@ namespace ServiciosVet.DAO
             return dataTable;
         }
 
+        /// <summary>
+        /// Ejecuta un comando SQL que no devuelve resultados en la base de datos como INSERT, UPDATE, DELETE, 
+        /// o cualquier comando que no genere un conjunto de resultados.
+        ///</summary>
+        /// <param name="comando"></param>
+        /// <returns>Devuelve true si el comando se ejecutó correctamente, de lo contrario, devuelve false.</returns>
         public bool EjecutarComando(string comando)
         {
             using (SqlConnection connection = this.ObtenerConexion())
