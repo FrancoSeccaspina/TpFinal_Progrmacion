@@ -28,7 +28,7 @@ Public Class FormularioAltaUsuario
             MessageBox.Show("¡Usuario Agregado con exito!")
             Limpiar()
         Catch ex As Exception
-            MessageBox.Show("Error al agregar usuario.")
+            MessageBox.Show($"Error al agregar usuaio : {ex}")
         End Try
 
     End Sub

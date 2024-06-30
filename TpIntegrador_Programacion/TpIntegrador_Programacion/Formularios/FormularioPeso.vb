@@ -5,19 +5,19 @@ Imports ServiciosVet.Models
 Public Class FormularioPeso
     Private Sub FormularioPeso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Posible muestra de combobox Nombre de Especie
-        Dim dao As New VeterinariaDAO
-        Dim nombreEspecies As List(Of String) = dao.ObtenerNombreEspecies()
-        CBAnimal.Items.Clear()
-        For Each nombre As String In nombreEspecies
-            CBAnimal.Items.Add(nombre)
-        Next
+        'Dim dao As New VeterinariaDAO
+        'Dim nombreEspecies As List(Of String) = dao.ObtenerNombreEspecies()
+        'CBAnimal.Items.Clear()
+        'For Each nombre As String In nombreEspecies
+        '    CBAnimal.Items.Add(nombre)
+        'Next
     End Sub
 
     Private Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
 
         Dim min = txtMin.Text
         Dim max = txtMax.Text
-        If min = "" OrElse min = Nothing Or max = "" OrElse max = Nothing Or CBAnimal.SelectedItem = Nothing Then
+        If min = "" OrElse min = Nothing Or max = "" OrElse max = Nothing Then
             MessageBox.Show("Error. Complete todos los campos.")
             Return
         End If
@@ -35,22 +35,24 @@ Public Class FormularioPeso
             MessageBox.Show("Error. El maximo tiene que ser mayor al minimo")
             Return
         End If
-        Dim nombreEspecie = CBAnimal.SelectedItem.ToString()
-        Dim dao As New VeterinariaDAO
-        Dim query = "Select * from Especies"
-        Dim mostrarTabla = dao.ConsultarTabla(query)
-        DG_Peso.DataSource = mostrarTabla
-        'IniciarDataTabe()
 
+        Dim dao As New VeterinariaDAO
+        Dim mostrarTabla = dao.ObtenerPrimerReporte(min, max)
+        DG_Peso.DataSource = mostrarTabla
+    End Sub
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
     End Sub
 
-    Private Sub IniciarDataTabe()
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
-        Dim dtColumnas As New DataTable
-        dtColumnas.Rows.Add("Tipo Especie")
-        dtColumnas.Rows.Add("Cantidad de la misma especie")
-        dtColumnas.Rows.Add("Peso Max")
-        dtColumnas.Rows.Add("Peso Min")
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
+    End Sub
+
+    Private Sub txtMin_TextChanged(sender As Object, e As EventArgs) Handles txtMin.TextChanged
+
     End Sub
 End Class

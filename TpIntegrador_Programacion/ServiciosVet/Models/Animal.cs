@@ -13,17 +13,17 @@ namespace ServiciosVet.Models
         public decimal Peso { get; set; }
         public int Edad { get; set; }
 
-        public string IDEspecie { get; set; }
-        public string IDCliente { get; set; }
+        public string NombreEspecie { get; set; }
+        public string NombreCliente { get; set; }
 
 
-        public Animal(string nombre, decimal peso, int edad, string iDEspecie, string iDCliente)
+        public Animal(string nombre, decimal peso, int edad, string NombreEspecie, string NombreCliente)
         {
             this.Nombre = nombre;
             this.Peso = peso;
             this.Edad = edad;
-            this.IDEspecie = iDEspecie;
-            this.IDCliente = iDCliente;
+            this.NombreEspecie = NombreEspecie;
+            this.NombreCliente = NombreCliente;
             //this.IDEspecie = cliente;
             //    this.IDEspecie = especie;   
         }

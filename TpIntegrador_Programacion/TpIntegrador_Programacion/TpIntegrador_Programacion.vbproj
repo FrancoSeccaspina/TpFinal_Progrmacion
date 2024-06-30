@@ -109,6 +109,12 @@
     <Compile Include="Formularios\FormularioAltaUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\FormularioCantidadDeAnimales.Designer.vb">
+      <DependentUpon>FormularioCantidadDeAnimales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioCantidadDeAnimales.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\FormularioPeso.Designer.vb">
       <DependentUpon>FormularioPeso.vb</DependentUpon>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioAltaUsuario.resx">
       <DependentUpon>FormularioAltaUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioCantidadDeAnimales.resx">
+      <DependentUpon>FormularioCantidadDeAnimales.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioPeso.resx">
       <DependentUpon>FormularioPeso.vb</DependentUpon>

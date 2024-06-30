@@ -36,10 +36,10 @@ Partial Class FormularioAltaAnimales
         Me.Btn_AgregarAnimal = New System.Windows.Forms.Button()
         Me.CBAnimal = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.EspecieBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.EspecieBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label7 = New System.Windows.Forms.Label()
         Me.CBCliente = New System.Windows.Forms.ComboBox()
+        Me.EspecieBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EspecieBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EspecieBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EspecieBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -154,6 +154,7 @@ Partial Class FormularioAltaAnimales
         'CBAnimal
         '
         Me.CBAnimal.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.EspecieBindingSource, "Nombre", True))
+        Me.CBAnimal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBAnimal.FormattingEnabled = True
         Me.CBAnimal.Location = New System.Drawing.Point(153, 265)
         Me.CBAnimal.Name = "CBAnimal"
@@ -171,14 +172,6 @@ Partial Class FormularioAltaAnimales
         Me.Label6.TabIndex = 12
         Me.Label6.Text = "Tipo"
         '
-        'EspecieBindingSource
-        '
-        Me.EspecieBindingSource.DataSource = GetType(ServiciosVet.Models.Especie)
-        '
-        'EspecieBindingSource1
-        '
-        Me.EspecieBindingSource1.DataSource = GetType(ServiciosVet.Models.Especie)
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -193,11 +186,20 @@ Partial Class FormularioAltaAnimales
         'CBCliente
         '
         Me.CBCliente.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.EspecieBindingSource, "Nombre", True))
+        Me.CBCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBCliente.FormattingEnabled = True
         Me.CBCliente.Location = New System.Drawing.Point(153, 336)
         Me.CBCliente.Name = "CBCliente"
         Me.CBCliente.Size = New System.Drawing.Size(181, 21)
         Me.CBCliente.TabIndex = 13
+        '
+        'EspecieBindingSource
+        '
+        Me.EspecieBindingSource.DataSource = GetType(ServiciosVet.Models.Especie)
+        '
+        'EspecieBindingSource1
+        '
+        Me.EspecieBindingSource1.DataSource = GetType(ServiciosVet.Models.Especie)
         '
         'FormularioAltaAnimales
         '

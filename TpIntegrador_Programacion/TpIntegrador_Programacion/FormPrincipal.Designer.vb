@@ -101,8 +101,8 @@ Partial Class Form1
         'ListadoVerdurasToolStripMenuItem
         '
         Me.ListadoVerdurasToolStripMenuItem.Name = "ListadoVerdurasToolStripMenuItem"
-        Me.ListadoVerdurasToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
-        Me.ListadoVerdurasToolStripMenuItem.Text = "Listado Verduras"
+        Me.ListadoVerdurasToolStripMenuItem.Size = New System.Drawing.Size(275, 22)
+        Me.ListadoVerdurasToolStripMenuItem.Text = "Lista Cantidad de Animales por dueño"
         '
         'EspecieToolStripMenuItem
         '

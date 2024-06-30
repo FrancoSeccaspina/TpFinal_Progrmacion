@@ -48,7 +48,6 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim sql As New InicializarSql()
         sql.Iniciar()
-
     End Sub
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Me.Close()
@@ -76,6 +75,17 @@ Public Class Form1
 
     Private Sub AltaClienToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaClienToolStripMenuItem.Click
         Dim formu As New FormularioAltaCliente
+        formu.MdiParent = Me
+
+        formu.Show()
+    End Sub
+
+    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
+
+    End Sub
+
+    Private Sub ListadoVerdurasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoVerdurasToolStripMenuItem.Click
+        Dim formu As New FormularioCantidadDeAnimales
         formu.MdiParent = Me
 
         formu.Show()

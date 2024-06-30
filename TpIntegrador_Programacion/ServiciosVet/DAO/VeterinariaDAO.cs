@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics.Contracts;
+using System.Text.RegularExpressions;
 
 namespace ServiciosVet.DAO
 {
@@ -30,7 +31,7 @@ namespace ServiciosVet.DAO
 
         public bool InsertNuevoUsuario(Usuario nuevoUsuario)
         {
-            string query = $"INSERT INTO Usuarios (NickName,Contranueva) VALUES ('{nuevoUsuario.NickName}',{nuevoUsuario.Contranueva})";
+            string query = $"INSERT INTO Usuarios (NickName,Contranueva) VALUES ('{nuevoUsuario.NickName}','{nuevoUsuario.Contranueva}')";
             IDbConnection conn = this.ObtenerConexion();
             IDbCommand command = conn.CreateCommand();
             command.CommandText = query;
@@ -40,7 +41,7 @@ namespace ServiciosVet.DAO
         }
         public bool InsertNuevoAnimal(Animal nuevoanimal)
         {
-            string query = $"INSERT INTO Animales (Nombre, Peso, Edad) VALUES ('{nuevoanimal.Nombre}',{nuevoanimal.Peso},{nuevoanimal.Edad})";
+            string query = $"INSERT INTO Animales (Nombre, Peso, Edad, NombreCliente, NombreEspecie) VALUES ('{nuevoanimal.Nombre}',{nuevoanimal.Peso},{nuevoanimal.Edad},'{nuevoanimal.NombreEspecie}','{nuevoanimal.NombreCliente}')";
             IDbConnection conn = this.ObtenerConexion();
             IDbCommand command = conn.CreateCommand();
             command.CommandText = query;
@@ -186,9 +187,13 @@ namespace ServiciosVet.DAO
 
         public bool VerificarExistenciaDeUsuario(string usuario, string contranueva)
         {
-            string query = $"SELECT * FROM Usuarios WHERE NickName = '{usuario}' AND Contranueva = '{contranueva}'";
+            //string query = $"SELECT * FROM Usuarios WHERE NickName = '{usuario}' AND Contranueva = '{contranueva}'";
+            string query = $"SELECT * FROM Usuarios WHERE NickName COLLATE Latin1_General_BIN = '{usuario}' AND Contranueva COLLATE Latin1_General_BIN = '{contranueva}';";
+
             return this.ConsultarTabla(query).Rows.Count > 0;
         }
+
+  
         //public Usuario VerificarContrasenia(string contranueva)
         //{
         //    string query = "Select Contranueva from Usuarios";
@@ -250,15 +255,15 @@ namespace ServiciosVet.DAO
         public DataTable ObtenerPrimerReporte(int ran1, int ran2)
         {
             string query = $"SELECT " +
-                            $"e.Nombre AS Especie, " +
-                            $"MAX(a.Peso) AS PesoMaximo, " +
-                            $"MIN(a.Peso) AS PesoMinimo, " +
-                            $"AVG(a.Peso) AS PesoPromedio " +
-                            $"FROM Animales AS a " +
-                            $"JOIN Especies AS e " +
-                            $"ON a.IDEspecie = e.ID " +
-                            $"WHERE a.Edad BETWEEN {ran1} AND {ran2} " +
-                            $"GROUP BY e.Nombre;";
+                               $"e.Nombre AS Especie, " +
+                               $"MAX(a.Peso) AS PesoMaximo, " +
+                               $"MIN(a.Peso) AS PesoMinimo, " +
+                               $"AVG(a.Peso) AS PesoPromedio " +
+                               $"FROM Animales a " +
+                               $"JOIN Especies e " +
+                               $"ON a.NombreEspecie = e.Nombre " +
+                               $"WHERE a.Edad BETWEEN {ran1} AND {ran2} " +
+                               $"GROUP BY e.Nombre;";
 
             return this.ConsultarTabla(query);
         }
@@ -271,10 +276,9 @@ namespace ServiciosVet.DAO
         {
             string query ="SELECT c.Nombre AS Dueño, COUNT(a.ID) AS CantidadAnimales " +
                             "FROM Clientes c " +
-                            "LEFT JOIN Animales a ON c.ID = a.IDCliente " +
+                            "JOIN Animales a ON c.Nombre = a.NombreCliente " +
                             "GROUP BY c.Nombre " +
                             "ORDER BY CantidadAnimales;";
-
             return this.ConsultarTabla(query);
         }
 

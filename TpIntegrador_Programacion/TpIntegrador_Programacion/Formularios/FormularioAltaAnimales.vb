@@ -37,14 +37,14 @@ Public Class FormularioAltaAnimales
             Return
         End If
         If CBAnimal.SelectedItem IsNot Nothing Then
-            Dim especieAnimals As String = CBAnimal.SelectedItem.ToString()
+            Dim nombreEspecie As String = CBAnimal.SelectedItem.ToString()
             Console.WriteLine("La especie seleccionada es: " & especieAnimal)
             Dim nombreCliente As String = CBCliente.SelectedItem.ToString()
             If TxtNombreAnimal.Text.Trim() <> "" And TxtEdadAnimal.Text.Trim() <> "" And TxtPesoAnimal.Text.Trim() <> "" Then
                 Dim nombreAnimal = TxtNombreAnimal.Text
                 Dim edadAnimal = TxtEdadAnimal.Text
                 Dim pesoAnimal = TxtPesoAnimal.Text
-                Dim nuevoAnimal As New Animal(nombreAnimal, pesoAnimal, edadAnimal, especieAnimals, nombreCliente)
+                Dim nuevoAnimal As New Animal(nombreAnimal, pesoAnimal, edadAnimal, nombreCliente, nombreEspecie)
                 dao.InsertNuevoAnimal(nuevoAnimal)
                 MessageBox.Show("¡Animal Agregado con exito!")
                 Limpiar()
