@@ -7,6 +7,11 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TpIntegrador_Programacion",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiciosVet", "ServiciosVet\ServiciosVet.csproj", "{34CBD2D4-60EF-43A4-98C8-55575A2FFF4E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{3B08257A-D203-44AA-BA10-F6C7540C71DF}"
+	ProjectSection(SolutionItems) = preProject
+		img\FondoProgama.jpg = img\FondoProgama.jpg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

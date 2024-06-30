@@ -39,7 +39,7 @@ Partial Class FormularioAltaCliente
         Me.btnAgregarCliente.Name = "btnAgregarCliente"
         Me.btnAgregarCliente.Size = New System.Drawing.Size(196, 32)
         Me.btnAgregarCliente.TabIndex = 22
-        Me.btnAgregarCliente.Text = "Agregar Usuario"
+        Me.btnAgregarCliente.Text = "Agregar"
         Me.btnAgregarCliente.UseVisualStyleBackColor = True
         '
         'Label7

@@ -68,7 +68,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub EspecieToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EspecieToolStripMenuItem.Click
+    Private Sub EspecieToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim formu As New FormularioAltaEspecie
         formu.MdiParent = Me
 
@@ -113,6 +113,13 @@ Public Class Form1
     Private Sub EspecieToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EspecieToolStripMenuItem1.Click
         Dim formu As New FormularioBajaEspecie
         formu.MdiParent = Me
+        formu.Show()
+    End Sub
+
+    Private Sub NuevaEspecieToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevaEspecieToolStripMenuItem.Click
+        Dim formu As New FormularioAltaEspecie
+        formu.MdiParent = Me
+
         formu.Show()
     End Sub
 End Class

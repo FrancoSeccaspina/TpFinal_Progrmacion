@@ -31,7 +31,11 @@ Partial Class Form1
         Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoVerdurasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EspecieToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AnimalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EspecieToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -44,32 +48,31 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TimerCarga = New System.Windows.Forms.Timer(Me.components)
-        Me.BajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AnimalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EspecieToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuevaEspecieToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.InformesToolStripMenuItem, Me.EspecieToolStripMenuItem, Me.BajaToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.InformesToolStripMenuItem, Me.BajaToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(695, 24)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 0, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(124, 509)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         Me.MenuStrip1.Visible = False
         '
         'UsuariosToolStripMenuItem
         '
-        Me.UsuariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaUsuarioToolStripMenuItem, Me.AltaAnimalesToolStripMenuItem, Me.AltaClienToolStripMenuItem})
+        Me.UsuariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaUsuarioToolStripMenuItem, Me.AltaAnimalesToolStripMenuItem, Me.AltaClienToolStripMenuItem, Me.NuevaEspecieToolStripMenuItem})
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.UsuariosToolStripMenuItem.Padding = New System.Windows.Forms.Padding(4, 20, 4, 0)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(115, 39)
         Me.UsuariosToolStripMenuItem.Text = "Agregar"
         '
         'AltaUsuarioToolStripMenuItem
@@ -94,7 +97,8 @@ Partial Class Form1
         '
         Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoUsuariosToolStripMenuItem, Me.ListadoVerdurasToolStripMenuItem})
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
-        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
+        Me.InformesToolStripMenuItem.Padding = New System.Windows.Forms.Padding(4, 20, 4, 0)
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(98, 39)
         Me.InformesToolStripMenuItem.Text = "Informes"
         '
         'ListadoUsuariosToolStripMenuItem
@@ -109,16 +113,43 @@ Partial Class Form1
         Me.ListadoVerdurasToolStripMenuItem.Size = New System.Drawing.Size(275, 22)
         Me.ListadoVerdurasToolStripMenuItem.Text = "Lista Cantidad de Animales por dueño"
         '
-        'EspecieToolStripMenuItem
+        'BajaToolStripMenuItem
         '
-        Me.EspecieToolStripMenuItem.Name = "EspecieToolStripMenuItem"
-        Me.EspecieToolStripMenuItem.Size = New System.Drawing.Size(103, 20)
-        Me.EspecieToolStripMenuItem.Text = "Agregar Especie"
+        Me.BajaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClienteToolStripMenuItem, Me.AnimalToolStripMenuItem, Me.UsuarioToolStripMenuItem, Me.EspecieToolStripMenuItem1})
+        Me.BajaToolStripMenuItem.Name = "BajaToolStripMenuItem"
+        Me.BajaToolStripMenuItem.Padding = New System.Windows.Forms.Padding(4, 20, 4, 0)
+        Me.BajaToolStripMenuItem.Size = New System.Drawing.Size(98, 39)
+        Me.BajaToolStripMenuItem.Text = "Baja"
+        '
+        'ClienteToolStripMenuItem
+        '
+        Me.ClienteToolStripMenuItem.Name = "ClienteToolStripMenuItem"
+        Me.ClienteToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
+        Me.ClienteToolStripMenuItem.Text = "Cliente"
+        '
+        'AnimalToolStripMenuItem
+        '
+        Me.AnimalToolStripMenuItem.Name = "AnimalToolStripMenuItem"
+        Me.AnimalToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
+        Me.AnimalToolStripMenuItem.Text = "Animal"
+        '
+        'UsuarioToolStripMenuItem
+        '
+        Me.UsuarioToolStripMenuItem.Name = "UsuarioToolStripMenuItem"
+        Me.UsuarioToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
+        Me.UsuarioToolStripMenuItem.Text = "Usuario"
+        '
+        'EspecieToolStripMenuItem1
+        '
+        Me.EspecieToolStripMenuItem1.Name = "EspecieToolStripMenuItem1"
+        Me.EspecieToolStripMenuItem1.Size = New System.Drawing.Size(114, 22)
+        Me.EspecieToolStripMenuItem1.Text = "Especie"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
+        Me.SalirToolStripMenuItem.Padding = New System.Windows.Forms.Padding(4, 20, 4, 0)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(98, 39)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'ContextMenuStrip1
@@ -137,7 +168,7 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(224, 81)
+        Me.Panel1.Location = New System.Drawing.Point(385, 123)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(268, 258)
@@ -226,49 +257,27 @@ Partial Class Form1
         'TimerCarga
         '
         '
-        'BajaToolStripMenuItem
+        'NuevaEspecieToolStripMenuItem
         '
-        Me.BajaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClienteToolStripMenuItem, Me.AnimalToolStripMenuItem, Me.UsuarioToolStripMenuItem, Me.EspecieToolStripMenuItem1})
-        Me.BajaToolStripMenuItem.Name = "BajaToolStripMenuItem"
-        Me.BajaToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
-        Me.BajaToolStripMenuItem.Text = "Baja"
-        '
-        'ClienteToolStripMenuItem
-        '
-        Me.ClienteToolStripMenuItem.Name = "ClienteToolStripMenuItem"
-        Me.ClienteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ClienteToolStripMenuItem.Text = "Cliente"
-        '
-        'AnimalToolStripMenuItem
-        '
-        Me.AnimalToolStripMenuItem.Name = "AnimalToolStripMenuItem"
-        Me.AnimalToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.AnimalToolStripMenuItem.Text = "Animal"
-        '
-        'UsuarioToolStripMenuItem
-        '
-        Me.UsuarioToolStripMenuItem.Name = "UsuarioToolStripMenuItem"
-        Me.UsuarioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.UsuarioToolStripMenuItem.Text = "Usuario"
-        '
-        'EspecieToolStripMenuItem1
-        '
-        Me.EspecieToolStripMenuItem1.Name = "EspecieToolStripMenuItem1"
-        Me.EspecieToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.EspecieToolStripMenuItem1.Text = "Especie"
+        Me.NuevaEspecieToolStripMenuItem.Name = "NuevaEspecieToolStripMenuItem"
+        Me.NuevaEspecieToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NuevaEspecieToolStripMenuItem.Text = "Nueva Especie"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(695, 481)
+        Me.AutoSize = True
+        Me.BackgroundImage = Global.TpIntegrador_Programacion.My.Resources.Resources.FondoProgama
+        Me.ClientSize = New System.Drawing.Size(985, 509)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "VETERINARIA"
+        Me.TransparencyKey = System.Drawing.Color.Yellow
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -297,11 +306,11 @@ Partial Class Form1
     Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents lblInfo2 As Label
     Friend WithEvents lblInfo As Label
-    Friend WithEvents EspecieToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AltaClienToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BajaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ClienteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AnimalToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsuarioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EspecieToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents NuevaEspecieToolStripMenuItem As ToolStripMenuItem
 End Class

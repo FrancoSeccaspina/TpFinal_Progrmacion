@@ -10,6 +10,7 @@ Public Class FormularioBajaEspecie
         Dim IdIngresado = TextBoxId.Text
         If (dao.EspecieExistentePorID(IdIngresado) And dao.DarDeBajaEspecie(IdIngresado)) Then
             MessageBox.Show("Cliente dado de baja con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            TextBoxId.Text = ""
         Else
             MessageBox.Show("No se pudo dar de baja al cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If

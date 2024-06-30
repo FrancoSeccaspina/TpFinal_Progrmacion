@@ -14,6 +14,7 @@ Public Class FormularioBajaUsuario
         End If
         If (dao.UsuarioExistentePorId(IdIngresado) And dao.DarDeBajaUsuario(IdIngresado)) Then
             MessageBox.Show("Cliente dado de baja con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            TextBoxId.Text = ""
         Else
             MessageBox.Show("No se pudo dar de baja al cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If

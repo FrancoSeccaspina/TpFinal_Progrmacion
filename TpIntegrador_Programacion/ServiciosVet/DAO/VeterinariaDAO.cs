@@ -172,7 +172,7 @@ namespace ServiciosVet.DAO
         public bool VerificarExistenciaDeUsuario(string usuario, string contranueva)
         {
             //string query = $"SELECT * FROM Usuarios WHERE NickName = '{usuario}' AND Contranueva = '{contranueva}'";
-            string query = $"SELECT * FROM Usuarios WHERE NickName COLLATE Latin1_General_BIN = '{usuario}' AND Contranueva COLLATE Latin1_General_BIN = '{contranueva}';";
+            string query = $"SELECT * FROM Usuarios WHERE NickName COLLATE Latin1_General_BIN = '{usuario}' AND Contranueva COLLATE Latin1_General_BIN = '{contranueva}' AND DadoDeBaja = 0;";
 
             return this.ConsultarTabla(query).Rows.Count > 0;
         }

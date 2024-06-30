@@ -8,8 +8,13 @@ Public Class FormularioBajaCliente
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnDarDeBaja.Click
         Dim dniIngresado = TextBoxId.Text
+        If dniIngresado = "" And dniIngresado = Nothing Then
+            MessageBox.Show("Error. Ingrese un id")
+            Return
+        End If
         If (dao.ClienteExistente(dniIngresado) And dao.DarDeBajaCliente(dniIngresado)) Then
             MessageBox.Show("Cliente dado de baja con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            TextBoxId.Text = ""
         Else
             MessageBox.Show("No se pudo dar de baja al cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
