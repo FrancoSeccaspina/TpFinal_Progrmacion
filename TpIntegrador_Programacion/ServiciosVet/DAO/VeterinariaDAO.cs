@@ -205,25 +205,25 @@ namespace ServiciosVet.DAO
         ////Existentes ----------------------------------------------
         public bool UsuarioExistente (string usuario)
         {
-            string query = $"SELECT NickName FROM Usuarios WHERE NickName = '{usuario}'";
+            string query = $"SELECT NickName FROM Usuarios WHERE NickName = '{usuario}' AND DadoDeBaja = 0";
             return this.ConsultarTabla(query).Rows.Count > 0;
         }
 
         public bool EspecieExistente(string especie)
         {
-            string query = $"SELECT Nombre from Especies where Nombre = '{especie}'";
+            string query = $"SELECT Nombre from Especies where Nombre = '{especie}' AND DadoDeBaja = 0";
             return this.ConsultarTabla(query).Rows.Count > 0;
         }
 
         public bool ClienteExistente(string dni)
         {
-            string query = $"SELECT DNI FROM Clientes WHERE DNI = '{dni}'";
+            string query = $"SELECT DNI FROM Clientes WHERE DNI = '{dni}' AND DadoDeBaja = 0";
             return this.ConsultarTabla(query).Rows.Count > 0;
         }
 
         public bool AnimalExistente(int id)
         {
-            string query = $"SELECT * FROM Animales WHERE ID = '{id}'";
+            string query = $"SELECT * FROM Animales WHERE ID = '{id}' AND DadoDeBaja = 0";
             return this.ConsultarTabla(query).Rows.Count > 0;
         }
 

@@ -56,3 +56,7 @@ ADD DadoDeBaja BIT NOT NULL DEFAULT 0;
 
 ALTER TABLE Animales
 ADD DadoDeBaja BIT NOT NULL DEFAULT 0;
+
+
+
+select * from Usuarios;
