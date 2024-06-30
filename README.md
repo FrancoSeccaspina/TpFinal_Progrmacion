@@ -1,9 +1,9 @@
 # Trabajo Práctico (veterinaria)
 ### integrantes
-* nombre
-* nombre
-* nombre
-* nombre
+* Aguirre Lucas
+* Lanza Tomás
+* Jimenez Gustavo
+* Seccaspina Franco
 
 **ATENCIÓN: EL TRABAJO PUEDE ESTAR SUJETO A MODIFICACIONES**
 
