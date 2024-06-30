@@ -109,6 +109,30 @@
     <Compile Include="Formularios\FormularioAltaUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\FormularioBajaAnimal.Designer.vb">
+      <DependentUpon>FormularioBajaAnimal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioBajaAnimal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioBajaCliente.Designer.vb">
+      <DependentUpon>FormularioBajaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioBajaCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioBajaEspecie.Designer.vb">
+      <DependentUpon>FormularioBajaEspecie.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioBajaEspecie.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioBajaUsuario.Designer.vb">
+      <DependentUpon>FormularioBajaUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioBajaUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\FormularioCantidadDeAnimales.Designer.vb">
       <DependentUpon>FormularioCantidadDeAnimales.vb</DependentUpon>
     </Compile>
@@ -152,6 +176,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioAltaUsuario.resx">
       <DependentUpon>FormularioAltaUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioBajaAnimal.resx">
+      <DependentUpon>FormularioBajaAnimal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioBajaCliente.resx">
+      <DependentUpon>FormularioBajaCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioBajaEspecie.resx">
+      <DependentUpon>FormularioBajaEspecie.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioBajaUsuario.resx">
+      <DependentUpon>FormularioBajaUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioCantidadDeAnimales.resx">
       <DependentUpon>FormularioCantidadDeAnimales.vb</DependentUpon>

@@ -48,6 +48,8 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim sql As New InicializarSql()
         sql.Iniciar()
+        Dim dao As New VeterinariaDAO
+        dao.DarDeBajaCliente(3)
     End Sub
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Me.Close()
@@ -87,7 +89,30 @@ Public Class Form1
     Private Sub ListadoVerdurasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoVerdurasToolStripMenuItem.Click
         Dim formu As New FormularioCantidadDeAnimales
         formu.MdiParent = Me
+        formu.Show()
+    End Sub
 
+    Private Sub ClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClienteToolStripMenuItem.Click
+        Dim formu As New FormularioBajaCliente
+        formu.MdiParent = Me
+        formu.Show()
+    End Sub
+
+    Private Sub AnimalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AnimalToolStripMenuItem.Click
+        Dim formu As New FormularioBajaAnimal
+        formu.MdiParent = Me
+        formu.Show()
+    End Sub
+
+    Private Sub UsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuarioToolStripMenuItem.Click
+        Dim formu As New FormularioBajaUsuario
+        formu.MdiParent = Me
+        formu.Show()
+    End Sub
+
+    Private Sub EspecieToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EspecieToolStripMenuItem1.Click
+        Dim formu As New FormularioBajaEspecie
+        formu.MdiParent = Me
         formu.Show()
     End Sub
 End Class

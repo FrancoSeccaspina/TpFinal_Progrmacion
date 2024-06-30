@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics.Contracts;
+using System.Runtime.Remoting.Messaging;
 using System.Text.RegularExpressions;
 
 namespace ServiciosVet.DAO
@@ -150,19 +151,6 @@ namespace ServiciosVet.DAO
             return usuarioEncontrado;
         }
 
-
-
-        public DataTable ObtenerUsuarios()
-        {
-            string query = "SELECT * FROM Usuario";
-            return ConsultarTabla(query);
-        }
-
-        public DataTable ObtenerClientes()
-        {
-            string query = " SELECT * FROM Clientes";
-            return ConsultarTabla(query);
-        }
         //public void AgregarUsuario(Usuario nuevoUsuario)
         //{
         //    string query = $"INSERT INTO Usuarios (NickName, Contra) VALUES ({nuevoUsuario.NickName}, {nuevoUsuario.Contra})";
@@ -174,11 +162,7 @@ namespace ServiciosVet.DAO
             string query = $"INSERT INTO Usuarios (DNI, Nombre) VALUES ({nuevoCliente.DNI}, {nuevoCliente.Nombre})";
             this.EjecutarComando(query);
         }
-        public DataTable ObtenerEspecies()
-        {
-            string query = "Select * FROM Especies";
-                return ConsultarTabla(query);
-        }
+
         public void AgregarEspecie(Especie nuevoEspecie)
         {
             string query = $"INSERT INTO Especies (Nombre) VALUES ('{nuevoEspecie.Nombre}')";
@@ -216,33 +200,103 @@ namespace ServiciosVet.DAO
         //    //ConsultarTabla(query);
         //    return UsuarioEncontrado;//contraseniaEncontrada
         //}
+
+
+        ////Existentes ----------------------------------------------
         public bool UsuarioExistente (string usuario)
         {
             string query = $"SELECT NickName FROM Usuarios WHERE NickName = '{usuario}'";
             return this.ConsultarTabla(query).Rows.Count > 0;
-
-
         }
+
         public bool EspecieExistente(string especie)
         {
             string query = $"SELECT Nombre from Especies where Nombre = '{especie}'";
             return this.ConsultarTabla(query).Rows.Count > 0;
-
-
         }
+
         public bool ClienteExistente(string dni)
         {
             string query = $"SELECT DNI FROM Clientes WHERE DNI = '{dni}'";
             return this.ConsultarTabla(query).Rows.Count > 0;
-
-
         }
-        //public List<Animal> GetAnimalList()
-        //{
-        //    IDbConnection conn = this.ObtenerConexion();
-        //    IDbCommand command = conn.CreateCommand();
-        //    command.CommandText = "Select * from Especies ";
-        //}
+
+        public bool AnimalExistente(int id)
+        {
+            string query = $"SELECT * FROM Animales WHERE ID = '{id}'";
+            return this.ConsultarTabla(query).Rows.Count > 0;
+        }
+
+        public bool UsuarioExistentePorId(int idUsuario)
+        {
+            string query = $"SELECT * FROM Usuarios WHERE id = '{idUsuario}'";
+            return this.ConsultarTabla(query).Rows.Count > 0;
+        }
+        public bool EspecieExistentePorID(string especie)
+        {
+            string query = $"SELECT * FROM Especies where ID = '{especie}'";
+            return this.ConsultarTabla(query).Rows.Count > 0;
+        }
+
+        //OBTENER TABLAS ----------------------------------------------
+        public DataTable ObtenerClientesActivos()
+        {
+            string query = " SELECT * FROM Clientes WHERE DadoDeBaja = 0";
+            return ConsultarTabla(query);
+        }
+
+        public DataTable ObtenerAnimalesActivos()
+        {
+            string query = " SELECT * FROM Animales WHERE DadoDeBaja = 0";
+            return ConsultarTabla(query);
+        }
+
+        public DataTable ObtenerUsuariosActivos()
+        {
+            string query = "SELECT * FROM Usuarios WHERE DadoDeBaja = 0 and NickName != 'admin'";
+            return ConsultarTabla(query);
+        }
+
+        public DataTable ObtenerEspeciesActivos()
+        {
+            string query = "Select * FROM Especies WHERE DadoDeBaja = 0";
+            return ConsultarTabla(query);
+        }
+
+        //BAJA ----------------------------------------------
+        public bool DarDeBajaUsuario(int idUsuario)
+        {
+            string comando = $"UPDATE Usuarios " +
+                            $"SET DadoDeBaja = 1 " +
+                            $"WHERE Id = {idUsuario};";
+            return this.EjecutarComando(comando);
+        }
+
+        public bool DarDeBajaCliente(int dniCliente)
+        {
+            string comando = $"UPDATE Clientes " +
+                                $"SET DadoDeBaja = 1 " +
+                                $"WHERE DNI = {dniCliente};";
+            return this.EjecutarComando(comando);
+        }
+
+        public bool DarDeBajaAnimal(int idAnimales)
+        {
+            string comando = $"UPDATE Animales " +
+                                $"SET DadoDeBaja = 1 " +
+                                $"WHERE Id = {idAnimales};";
+            return this.EjecutarComando(comando);
+        }
+
+        public bool DarDeBajaEspecie(int idAnimales)
+        {
+            string comando = $"UPDATE Especies " +
+                                $"SET DadoDeBaja = 1 " +
+                                $"WHERE Id = {idAnimales};";
+            return this.EjecutarComando(comando);
+        }
+
+        //REPORTES ----------------------------------------------
 
         /// <summary>
         /// Mostrar el peso máximo, mínimo y promedio de agrupado por especie de todos los animales. 

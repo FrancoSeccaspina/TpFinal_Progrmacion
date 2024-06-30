@@ -44,6 +44,11 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TimerCarga = New System.Windows.Forms.Timer(Me.components)
+        Me.BajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AnimalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EspecieToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -51,7 +56,7 @@ Partial Class Form1
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.InformesToolStripMenuItem, Me.EspecieToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.InformesToolStripMenuItem, Me.EspecieToolStripMenuItem, Me.BajaToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
@@ -95,7 +100,7 @@ Partial Class Form1
         'ListadoUsuariosToolStripMenuItem
         '
         Me.ListadoUsuariosToolStripMenuItem.Name = "ListadoUsuariosToolStripMenuItem"
-        Me.ListadoUsuariosToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
+        Me.ListadoUsuariosToolStripMenuItem.Size = New System.Drawing.Size(275, 22)
         Me.ListadoUsuariosToolStripMenuItem.Text = "Lista Busqueda por Peso"
         '
         'ListadoVerdurasToolStripMenuItem
@@ -221,6 +226,37 @@ Partial Class Form1
         'TimerCarga
         '
         '
+        'BajaToolStripMenuItem
+        '
+        Me.BajaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClienteToolStripMenuItem, Me.AnimalToolStripMenuItem, Me.UsuarioToolStripMenuItem, Me.EspecieToolStripMenuItem1})
+        Me.BajaToolStripMenuItem.Name = "BajaToolStripMenuItem"
+        Me.BajaToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
+        Me.BajaToolStripMenuItem.Text = "Baja"
+        '
+        'ClienteToolStripMenuItem
+        '
+        Me.ClienteToolStripMenuItem.Name = "ClienteToolStripMenuItem"
+        Me.ClienteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ClienteToolStripMenuItem.Text = "Cliente"
+        '
+        'AnimalToolStripMenuItem
+        '
+        Me.AnimalToolStripMenuItem.Name = "AnimalToolStripMenuItem"
+        Me.AnimalToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AnimalToolStripMenuItem.Text = "Animal"
+        '
+        'UsuarioToolStripMenuItem
+        '
+        Me.UsuarioToolStripMenuItem.Name = "UsuarioToolStripMenuItem"
+        Me.UsuarioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.UsuarioToolStripMenuItem.Text = "Usuario"
+        '
+        'EspecieToolStripMenuItem1
+        '
+        Me.EspecieToolStripMenuItem1.Name = "EspecieToolStripMenuItem1"
+        Me.EspecieToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.EspecieToolStripMenuItem1.Text = "Especie"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -263,4 +299,9 @@ Partial Class Form1
     Friend WithEvents lblInfo As Label
     Friend WithEvents EspecieToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AltaClienToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BajaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ClienteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AnimalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UsuarioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EspecieToolStripMenuItem1 As ToolStripMenuItem
 End Class

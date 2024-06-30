@@ -23,6 +23,7 @@ CREATE TABLE Especies (
     Nombre NVARCHAR(100) not null,
     EdadMadurez INT not null,
     PesoPromedio DECIMAL(3,2) not null
+	--cambiar decimal DECIMAL(5,2) 
 );
 
 
@@ -40,3 +41,18 @@ SELECT 'admin', '123'
 WHERE NOT EXISTS (
     SELECT 1 FROM Usuarios WHERE NickName = 'admin'
 );
+
+ALTER TABLE Especies
+ALTER COLUMN PesoPromedio DECIMAL(5,2) NOT NULL;
+
+ALTER TABLE Especies
+ADD DadoDeBaja BIT NOT NULL DEFAULT 0;
+
+ALTER TABLE Usuarios
+ADD DadoDeBaja BIT NOT NULL DEFAULT 0;
+
+ALTER TABLE Clientes
+ADD DadoDeBaja BIT NOT NULL DEFAULT 0;
+
+ALTER TABLE Animales
+ADD DadoDeBaja BIT NOT NULL DEFAULT 0;
