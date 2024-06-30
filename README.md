@@ -5,6 +5,11 @@
 * Jimenez Gustavo
 * Seccaspina Franco
 
+##Utilización el Programa
+Para ingresar al programa, se puede ingresar con el usuario supremo.
+Usuario: admin
+Contraseña: 123
+
 **ATENCIÓN: EL TRABAJO PUEDE ESTAR SUJETO A MODIFICACIONES**
 
 ## Premisa:
