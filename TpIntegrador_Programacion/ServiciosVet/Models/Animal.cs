@@ -10,14 +10,14 @@ namespace ServiciosVet.Models
     {
         public int id { get; set; }
         public string Nombre { get; set; }
-        public decimal Peso { get; set; }
+        public double Peso { get; set; }
         public int Edad { get; set; }
 
         public string NombreEspecie { get; set; }
         public string NombreCliente { get; set; }
 
 
-        public Animal(string nombre, decimal peso, int edad, string NombreEspecie, string NombreCliente)
+        public Animal(string nombre, double peso, int edad, string NombreEspecie, string NombreCliente)
         {
             this.Nombre = nombre;
             this.Peso = peso;

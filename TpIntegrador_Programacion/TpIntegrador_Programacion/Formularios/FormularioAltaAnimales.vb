@@ -1,3 +1,4 @@
+Imports System.Globalization
 Imports ServiciosVet
 Imports ServiciosVet.DAO
 Imports ServiciosVet.Models
@@ -43,13 +44,28 @@ Public Class FormularioAltaAnimales
             If TxtNombreAnimal.Text.Trim() <> "" And TxtEdadAnimal.Text.Trim() <> "" And TxtPesoAnimal.Text.Trim() <> "" Then
                 Dim nombreAnimal = TxtNombreAnimal.Text
                 Dim edadAnimal = TxtEdadAnimal.Text
-                Dim pesoAnimal = TxtPesoAnimal.Text
-                Dim nuevoAnimal As New Animal(nombreAnimal, pesoAnimal, edadAnimal, nombreCliente, nombreEspecie)
-                dao.InsertNuevoAnimal(nuevoAnimal)
+                Dim pesoAnimal As String = TxtPesoAnimal.Text
+
+                If pesoAnimal = "" OrElse pesoAnimal Is Nothing Or edadAnimal = "" OrElse edadAnimal Is Nothing Then
+                    MessageBox.Show("ERROR. Complete todos los campos campo")
+                    Return
+                End If
+                If Not edadAnimal.All(AddressOf Char.IsDigit) Then
+                    MessageBox.Show("ERROR. El peso debe contener solo números.")
+                    Return
+                End If
+
+                Try
+                    Dim pesoAnimalDecimal As Decimal = Decimal.Parse(TxtPesoAnimal.Text, CultureInfo.InvariantCulture)
+                    Dim nuevoAnimal As New Animal(nombreAnimal, pesoAnimalDecimal, edadAnimal, nombreCliente, nombreEspecie)
+                    dao.InsertNuevoAnimal(nuevoAnimal)
+                Catch ex As Exception
+                    MessageBox.Show($"Error : {ex}")
+                End Try
                 MessageBox.Show("¡Animal Agregado con exito!")
                 Limpiar()
-            Else
-                MessageBox.Show("Por favor, complete todos los campos y asajunte una foto")
+                Else
+                    MessageBox.Show("Por favor, complete todos los campos y asajunte una foto")
             End If
         End If
 

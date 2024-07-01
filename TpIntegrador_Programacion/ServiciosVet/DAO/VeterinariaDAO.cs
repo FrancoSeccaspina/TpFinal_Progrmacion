@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics.Contracts;
+using System.Globalization;
 using System.Runtime.Remoting.Messaging;
 using System.Text.RegularExpressions;
 
@@ -42,7 +43,8 @@ namespace ServiciosVet.DAO
         }
         public bool InsertNuevoAnimal(Animal nuevoanimal)
         {
-            string query = $"INSERT INTO Animales (Nombre, Peso, Edad, NombreCliente, NombreEspecie) VALUES ('{nuevoanimal.Nombre}',{nuevoanimal.Peso},{nuevoanimal.Edad},'{nuevoanimal.NombreEspecie}','{nuevoanimal.NombreCliente}')";
+          string query = $"INSERT INTO Animales (Nombre, Peso, Edad, NombreCliente, NombreEspecie) VALUES ('{nuevoanimal.Nombre}', {nuevoanimal.Peso.ToString("0.##", CultureInfo.InvariantCulture)}, {nuevoanimal.Edad}, '{nuevoanimal.NombreEspecie}', '{nuevoanimal.NombreCliente}')";
+
             IDbConnection conn = this.ObtenerConexion();
             IDbCommand command = conn.CreateCommand();
             command.CommandText = query;

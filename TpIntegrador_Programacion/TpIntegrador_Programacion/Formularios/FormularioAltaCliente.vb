@@ -31,6 +31,7 @@ Public Class FormularioAltaCliente
         Try
             If dao.ClienteExistente(dni) Then
                 MessageBox.Show("Error.El DNi del cliente ya esta registrado")
+                Return
             End If
             Dim nuevoCliente As New Cliente(dni, nombre)
             dao.InsertNuevoCliente(nuevoCliente)
