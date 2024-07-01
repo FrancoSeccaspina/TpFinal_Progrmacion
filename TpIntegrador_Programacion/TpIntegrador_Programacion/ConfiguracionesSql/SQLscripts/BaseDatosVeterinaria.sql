@@ -56,10 +56,5 @@ ADD DadoDeBaja BIT NOT NULL DEFAULT 0;
 ALTER TABLE Animales
 ADD DadoDeBaja BIT NOT NULL DEFAULT 0;
 
-select * from Animales
-
-INSERT INTO Animales (Nombre, Peso, Edad, NombreCliente, NombreEspecie)
-VALUES ('Firulais', 5.50, 3, 'Juan Pérez', 'Perro');
-
 ALTER TABLE Animales
 ALTER COLUMN Peso DECIMAL(10,2) NOT NULL;
