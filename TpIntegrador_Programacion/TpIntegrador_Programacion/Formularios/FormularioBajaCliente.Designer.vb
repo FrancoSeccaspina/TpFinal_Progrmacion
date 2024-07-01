@@ -33,6 +33,7 @@ Partial Class FormularioBajaCliente
         '
         Me.DataGridClientes.AllowUserToAddRows = False
         Me.DataGridClientes.AllowUserToDeleteRows = False
+        Me.DataGridClientes.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.DataGridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridClientes.Location = New System.Drawing.Point(12, 12)
         Me.DataGridClientes.Name = "DataGridClientes"
@@ -42,6 +43,7 @@ Partial Class FormularioBajaCliente
         '
         'TextBoxId
         '
+        Me.TextBoxId.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBoxId.Location = New System.Drawing.Point(332, 322)
         Me.TextBoxId.Name = "TextBoxId"
         Me.TextBoxId.Size = New System.Drawing.Size(150, 20)
@@ -49,6 +51,7 @@ Partial Class FormularioBajaCliente
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(264, 325)
         Me.Label1.Name = "Label1"
@@ -58,6 +61,7 @@ Partial Class FormularioBajaCliente
         '
         'BtnDarDeBaja
         '
+        Me.BtnDarDeBaja.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.BtnDarDeBaja.Location = New System.Drawing.Point(303, 364)
         Me.BtnDarDeBaja.Name = "BtnDarDeBaja"
         Me.BtnDarDeBaja.Size = New System.Drawing.Size(133, 73)

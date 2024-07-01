@@ -31,6 +31,7 @@ Partial Class FormularioBajaAnimal
         '
         'BtnDarDeBaja
         '
+        Me.BtnDarDeBaja.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.BtnDarDeBaja.Location = New System.Drawing.Point(278, 287)
         Me.BtnDarDeBaja.Name = "BtnDarDeBaja"
         Me.BtnDarDeBaja.Size = New System.Drawing.Size(133, 73)
@@ -40,6 +41,7 @@ Partial Class FormularioBajaAnimal
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(239, 248)
         Me.Label1.Name = "Label1"
@@ -49,6 +51,7 @@ Partial Class FormularioBajaAnimal
         '
         'TextBoxId
         '
+        Me.TextBoxId.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBoxId.Location = New System.Drawing.Point(307, 245)
         Me.TextBoxId.Name = "TextBoxId"
         Me.TextBoxId.Size = New System.Drawing.Size(150, 20)
@@ -58,6 +61,7 @@ Partial Class FormularioBajaAnimal
         '
         Me.DataGridAnimales.AllowUserToAddRows = False
         Me.DataGridAnimales.AllowUserToDeleteRows = False
+        Me.DataGridAnimales.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.DataGridAnimales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridAnimales.Location = New System.Drawing.Point(22, 12)
         Me.DataGridAnimales.Name = "DataGridAnimales"

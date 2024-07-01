@@ -95,31 +95,35 @@ Public Class Form1
     Private Sub ClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClienteToolStripMenuItem.Click
         Dim formu As New FormularioBajaCliente
         formu.MdiParent = Me
+        formu.WindowState = FormWindowState.Maximized
         formu.Show()
     End Sub
 
     Private Sub AnimalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AnimalToolStripMenuItem.Click
         Dim formu As New FormularioBajaAnimal
         formu.MdiParent = Me
+        formu.WindowState = FormWindowState.Maximized
         formu.Show()
     End Sub
 
     Private Sub UsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuarioToolStripMenuItem.Click
         Dim formu As New FormularioBajaUsuario
         formu.MdiParent = Me
+        formu.WindowState = FormWindowState.Maximized
         formu.Show()
     End Sub
 
     Private Sub EspecieToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EspecieToolStripMenuItem1.Click
         Dim formu As New FormularioBajaEspecie
         formu.MdiParent = Me
+        formu.WindowState = FormWindowState.Maximized
         formu.Show()
     End Sub
 
     Private Sub NuevaEspecieToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevaEspecieToolStripMenuItem.Click
         Dim formu As New FormularioAltaEspecie
         formu.MdiParent = Me
-
+        formu.WindowState = FormWindowState.Maximized
         formu.Show()
     End Sub
 End Class

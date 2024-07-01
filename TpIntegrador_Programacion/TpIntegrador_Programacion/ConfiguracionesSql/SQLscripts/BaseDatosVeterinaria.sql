@@ -22,8 +22,7 @@ CREATE TABLE Especies (
     ID INT PRIMARY KEY IDENTITY,
     Nombre NVARCHAR(100) not null,
     EdadMadurez INT not null,
-    PesoPromedio DECIMAL(3,2) not null
-	--cambiar decimal DECIMAL(5,2) 
+    PesoPromedio DECIMAL(5,2) not null
 );
 
 
@@ -56,7 +55,3 @@ ADD DadoDeBaja BIT NOT NULL DEFAULT 0;
 
 ALTER TABLE Animales
 ADD DadoDeBaja BIT NOT NULL DEFAULT 0;
-
-
-
-select * from Usuarios;
