@@ -4,8 +4,43 @@
 * Lanza Tomás
 * Jimenez Gustavo
 * Seccaspina Franco
+# Configuración del Proyecto
 
-##Utilización el Programa
+## 1. Entrar al repositorio de GitHub
+- Abre tu navegador web y dirígete al siguiente enlace: [TpFinal_Progrmacion](https://github.com/FrancoSeccaspina/TpFinal_Progrmacion).
+
+## 2. Descargar el repositorio
+### Opción 1: Descargar como ZIP
+1. En la parte superior derecha del repositorio, haz clic en el botón verde que dice `<> Code`.
+2. Selecciona `Download ZIP`.
+3. Descomprime el archivo ZIP en tu computadora.
+
+### Opción 2: Clonar el repositorio usando Git Bash
+1. Abre Git Bash en tu computadora.
+2. Navega al directorio donde deseas clonar el repositorio.
+3. Ejecuta el siguiente comando:
+    ```bash
+    git clone https://github.com/FrancoSeccaspina/TpFinal_Progrmacion.git
+    ```
+4. Una vez completado, navega al directorio clonado:
+    ```bash
+    cd TpFinal_Progrmacion
+    ```
+
+## 3. Configurar la base de datos
+- Asegúrate de tener SQL Server 2019 y SQL Server Management Studio 20 instalados en tu computadora.
+- Busca el script SQL en el repositorio que genera la base de datos.
+- Abre SQL Server Management Studio y conéctate a tu instancia de SQL Server.
+- Ejecuta el script para crear la base de datos y las tablas necesarias.
+
+## 4. Configuración del entorno de desarrollo
+- Asegúrate de tener Visual Studio 2022 instalado.
+- Abre el proyecto en Visual Studio.
+- Verifica que el proyecto esté configurado para usar .NET Framework 4.7.2 o superior.
+- Configura las cadenas de conexión a la base de datos en los archivos de configuración del proyecto si es necesario.
+
+
+## Utilización el Programa:
 Para ingresar al programa, se puede ingresar con el usuario supremo.
 Usuario: admin
 Contraseña: 123
