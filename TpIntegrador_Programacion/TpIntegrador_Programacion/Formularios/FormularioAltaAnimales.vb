@@ -50,6 +50,12 @@ Public Class FormularioAltaAnimales
                     MessageBox.Show("ERROR. Complete todos los campos campo")
                     Return
                 End If
+
+                If pesoAnimal <= 0 Or edadAnimal <= 0 Then
+                    MessageBox.Show("ERROR. Solo numero positivos")
+                    Return
+                End If
+
                 If Not edadAnimal.All(AddressOf Char.IsDigit) Then
                     MessageBox.Show("ERROR. El peso debe contener solo números.")
                     Return

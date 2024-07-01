@@ -58,3 +58,5 @@ ADD DadoDeBaja BIT NOT NULL DEFAULT 0;
 
 ALTER TABLE Animales
 ALTER COLUMN Peso DECIMAL(10,2) NOT NULL;
+
+select * from Animales;
